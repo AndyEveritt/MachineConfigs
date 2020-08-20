@@ -6,11 +6,13 @@ G91
 G1 Z4 F1000
 G90
 
+M564 S0 ; allow movement outside the normal limits
+
 ;mesh levelling off
 G29 S2
 
 ;Purge nozzle
-M98 Ppurgeb.g
+;M98 P"purge.g"
 
 ;Drop the brush
 ;G1 B45 F5000
@@ -19,16 +21,18 @@ M98 Ppurgeb.g
 G53 G1 X-12.5 Y150 F50000
 G53 G1 X-12.5 Y180 F50000
 G53 G1 X-12.5 Y210 F50000
-G53 G1 X-12.5 Y228.25 F5000
+G53 G1 X-12.5 Y229.8 F5000
 
 ;Take a Photo
-M98 P/macros/Camera
+;M98 P"/macros/Camera"
 
 ;Open Coupler
-M98 P/macros/Coupler - Unlock
+M98 P"/macros/Coupler - Unlock"
 
 ;fan off
 M106 P2 S0
 
 ;Move Out
 G53 G1 X-12.5 Y150 F50000
+
+M564 S1								; apply the normal limits again
