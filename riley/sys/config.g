@@ -8,7 +8,6 @@ G90 							; Send absolute coordinates...
 M83 							; ...but relative extruder moves
 M555 P2 						; Set firmware compatibility to look like Marlin
 M575 P1 B57600 S1
-M551 P"password"
 
 M667 S1 						; Select CoreXY mode	
 
@@ -23,7 +22,8 @@ M569 P5 S0 						; Drive 5 COUPLER
 M584 X2 Y1 Z0 C5				; Axis to driver mapping
 M584 E3         				; set extruder drivers
 
-M208 X-33:328.5 Y-46.5:190 Z0:295 C0:240				; Set axis maxima & minima
+M98 P"resetaxislimit.g"
+M208 C0:240				; Set axis maxima & minima
 M92 X100 Y100 Z1600 C200 E396				            ; Set steps per mm assuming x16 microstepping
 M350 E16 I1 									        ; Configure microstepping with interpolation
 M350 C16 I1

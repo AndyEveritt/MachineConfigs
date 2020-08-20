@@ -16,7 +16,7 @@ G1 X-12.5 Y180 F50000
 G1 X-12.5 Y220 F50000
 
 ;Collect
-G1 X-12.5 Y228.25 F2500
+G1 X-12.5 Y229.8 F2500
 
 ;Close Coupler
 M98 P"/macros/Coupler - Lock"
@@ -31,7 +31,7 @@ G90
 G1 X-12.5 Y150 B4.25 F4000
 
 ; set Y max for this tool
-;M208 Y66
+M208 X-17.5:312.5 Y158
 
 ; apply the normal limits again
 M564 S1
