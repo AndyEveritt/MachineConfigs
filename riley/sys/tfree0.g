@@ -18,10 +18,10 @@ G29 S2
 ;G1 B45 F5000
 
 ;Move In
-G53 G1 X-12.5 Y150 F50000
-G53 G1 X-12.5 Y180 F50000
-G53 G1 X-12.5 Y210 F50000
-G53 G1 X-12.5 Y229.8 F5000
+G53 G1 X-12.5 Y150 F5000
+G53 G1 X-12.5 Y180 F5000
+G53 G1 X-12.5 Y210 F5000
+G53 G1 X-12.5 Y229.8 F500
 
 ;Take a Photo
 ;M98 P"/macros/Camera"
@@ -33,7 +33,7 @@ M98 P"/macros/Coupler - Unlock"
 M106 P2 S0
 
 ;Move Out
-G53 G1 X-12.5 Y150 F50000
+G53 G1 X-12.5 Y150 F5000
 
 M98 P"resetaxislimit.g"
 M564 S1								; apply the normal limits again
