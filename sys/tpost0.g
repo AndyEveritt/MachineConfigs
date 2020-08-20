@@ -8,3 +8,6 @@ M116 P0
 ;M98 P"prime.g"
 
 M106 R1	; restore print cooling fan speed
+
+;mesh levelling on
+G29 S1
