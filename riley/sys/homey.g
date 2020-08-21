@@ -3,7 +3,7 @@
 
 M400 				; make sure everything has stopped before we change the motor currents
 M913 X20 Y20 		; drop motor currents to 20%
-
+M564 S0 ; allow movement outside the normal limits
 G91 				; use relative positioning
 G1 H2 X0.5 Y-0.5 F10000	; energise motors and move them 0.5mm in the +Y direction to ensure they are not stalled
 G1 H2 Z3 F5000		; lower bed 3mm
@@ -14,3 +14,4 @@ G90 				; back to absolute positioning
 
 M400 				; make sure everything has stopped before we reset the motor currents
 M913 X100 Y100 		; motor currents back to 100%
+M564 S1								; apply the normal limits again

@@ -15,8 +15,8 @@ M667 S1 						; Select CoreXY mode
 M569 P0 S1 						; Drive 0 Z
 M569 P1 S0 						; Drive 1 Y
 M569 P2 S0 						; Drive 2 X
-M569 P3 S0 						; Drive 3 E0
-M569 P4 S0 						; Drive 4 E1
+M569 P3 S1 						; Drive 3 E0
+M569 P4 S1 						; Drive 4 E1
 M569 P5 S0 						; Drive 5 COUPLER
 
 M584 X2 Y1 Z0 C5				; Axis to driver mapping
@@ -75,7 +75,7 @@ G10 P0 X0 Y0 Z0 					    ; Reset tool 0 axis offsets
 G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 
 ; Tool offsets, adding to vales brings the plane closer to the tool
-G10 P0 X19.5 Y42.5 Z-6.09				; T0 (X0 | Y0 | Z0)
+G10 P0 X19.5 Y42.5 Z-5.64				; T0 (X0 | Y0 | Z0)
 
 M593 F50								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
 M376 H15								; bed compensation taper
