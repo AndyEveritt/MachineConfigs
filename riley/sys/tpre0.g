@@ -13,10 +13,10 @@ M564 S0 ; allow movement outside the normal limits
 G1 X-12.5 Y180 F5000
 
 ;Move in
-G1 X-12.5 Y220 F5000
+G1 X-12.5 Y220 F500
 
 ;Collect
-G1 X-12.5 Y229.8 F250
+G1 X-12.5 Y229.8 F100
 
 ;Close Coupler
 M98 P"/macros/Coupler - Lock"
@@ -28,7 +28,7 @@ G1 Z13.5 F1000
 G90
 
 ;Move Out
-G1 X-12.5 Y150 B4.25 F400
+G1 X-12.5 Y150 B4.25 F100
 
 ; set Y max for this tool
 M208 X-17.5:312.5 Y158

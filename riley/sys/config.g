@@ -22,8 +22,8 @@ M569 P5 S0 						; Drive 5 COUPLER
 M584 X2 Y1 Z0 C5				; Axis to driver mapping
 M584 E3         				; set extruder drivers
 
-M98 P"resetaxislimit.g"
-M208 C0:240				; Set axis maxima & minima
+M98 P"resetaxislimit.g"                                 ; Set axis maxima & minima
+M208 C0:240				                                ; Set axis maxima & minima
 M92 X100 Y100 Z1600 C200 E396				            ; Set steps per mm assuming x16 microstepping
 M350 E16 I1 									        ; Configure microstepping with interpolation
 M350 C16 I1
@@ -64,8 +64,8 @@ M950 H1 C"out2" T1						; Extruder 0 heater
 M143 H1 S300 							; Set temperature limit for heater 1 to 300C
 
 ; Fans
-M950 F1 C"out4"							; T0 HE
-M950 F2 C"out5"							; T0 PCF
+M950 F1 C"out8"							; T0 HE
+M950 F2 C"out7"							; T0 PCF
 M106 P1 S255 H1 T70						; T0 HE
 M106 P2 S0								; T0 PCF
 
