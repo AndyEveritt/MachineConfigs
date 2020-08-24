@@ -14,22 +14,23 @@ G1 X329 Y127.5
 ;Park for prime/purge
 G1 X334 Y100 F50000
 
-;Prime
-G92 E0
-G1 E15 F200
-G1 F50
-G1 E2 F50
-G92 E0
+if heat.heaters[state.currentTool + 1].current > heat.coldExtrudeTemperature
+    ;Prime
+    G92 E0
+    G1 E15 F200
+    G1 F50
+    G1 E2 F50
+    G92 E0
 
-;Flick
-G1 X332 Y100.5 F50000
-G1 X334 Y114.5
-G1 X336 Y100.5 F50000
-G1 X334 Y114.5
-G1 X332 Y100.5 F50000
-G1 X333 Y114.5
-G1 X336 Y100.5 F50000
-G1 X334 Y114.5
+    ;Flick
+    G1 X332 Y100.5 F50000
+    G1 X334 Y114.5
+    G1 X336 Y100.5 F50000
+    G1 X334 Y114.5
+    G1 X332 Y100.5 F50000
+    G1 X333 Y114.5
+    G1 X336 Y100.5 F50000
+    G1 X334 Y114.5
 
 ; Brush Out
 G1 X337 Y127.5 F50000
