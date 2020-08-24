@@ -5,7 +5,7 @@
 M116 P0
 
 ;prime nozzle
-;M98 P"prime.g"
+M98 P"prime.g"
 
 M106 R1	; restore print cooling fan speed
 

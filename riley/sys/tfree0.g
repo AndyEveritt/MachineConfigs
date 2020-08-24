@@ -12,7 +12,7 @@ M564 S0 ; allow movement outside the normal limits
 G29 S2
 
 ;Purge nozzle
-;M98 P"purge.g"
+M98 P"purge.g"
 
 ;Move In
 G53 G1 X-9 Y150 F1000

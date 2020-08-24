@@ -31,7 +31,7 @@ G90
 G1 X-9 Y150 B4.25 F500
 
 ; set Y max for this tool
-M208 X-17.5:312.5 Y154
+M208 X-17.5:317.5 Y154
 
 ; apply the normal limits again
 M564 S1
