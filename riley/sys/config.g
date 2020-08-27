@@ -81,7 +81,7 @@ M593 F50								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/a
 M376 H15								; bed compensation taper
 
 ; Bowden tubes are ~700mm long so PA on the Bowden tools almost certainly needs to be increased
-M572 D0 S0.05 							; pressure advance T0
+;M572 D0 S0.05 							; pressure advance T0
 
 ; Set up the dock indicator switches on the Hemera tools. These are wired NO so invert the pin.
 ; M950 J2 C"22.!^io0.in"					; GpIn 2 = tool 2 dock switch

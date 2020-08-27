@@ -12,7 +12,8 @@ M564 S0 ; allow movement outside the normal limits
 G29 S2
 
 ;Purge nozzle
-M98 P"purge.g"
+if heat.heaters[1].active > heat.coldExtrudeTemperature
+    M98 P"purge.g"
 
 ;Move In
 G53 G1 X-9 Y150 F5000
@@ -24,7 +25,7 @@ G53 G1 X-9 Y226.2 F2000
 ;M98 P"/macros/Camera"
 
 ;Open Coupler
-M98 P"/macros/Coupler - Unlock"
+M98 P"/macros/Tool Control/Coupler - Unlock"
 
 ;fan off
 M106 P2 S0

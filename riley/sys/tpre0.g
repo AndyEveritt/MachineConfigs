@@ -5,7 +5,7 @@
 ;T-1
 
 ;Unlock Coupler
-M98 P"/macros/Coupler - Unlock"
+M98 P"/macros/Tool Control/Coupler - Unlock"
 
 M564 S0 ; allow movement outside the normal limits
 
@@ -19,7 +19,7 @@ G1 X-9 Y220 F5000
 G1 X-9 Y226.2 F2000
 
 ;Close Coupler
-M98 P"/macros/Coupler - Lock"
+M98 P"/macros/Tool Control/Coupler - Lock"
 
 ;WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING!
 ;if you are using non-standard length hotends ensure the bed is lowered enough BEFORE undocking the tool!

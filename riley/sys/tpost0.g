@@ -5,7 +5,8 @@
 M116 P0
 
 ;prime nozzle
-M98 P"prime.g"
+if heat.heaters[1].active > heat.coldExtrudeTemperature
+    M98 P"prime.g"
 
 M106 R1	; restore print cooling fan speed
 
