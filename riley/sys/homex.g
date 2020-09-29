@@ -4,6 +4,11 @@
 ; DC42 replaced G1 S parameters by H
 ; DC42 removed redundant G4 and M574 commands
 
+; Check tool detect switch
+if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
+    M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
+    abort
+
 G91 				; use relative positioning
 
 G1 H2 X0.5 Y0.5 F10000	; energise motors to ensure they are not stalled

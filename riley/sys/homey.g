@@ -1,6 +1,11 @@
 ; homey.g
 ; called to home the Y axis
 
+; Check tool detect switch
+if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
+    M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
+    abort
+
 M400 				; make sure everything has stopped before we change the motor currents
 M913 X20 Y20 		; drop motor currents to 20%
 M564 S0 ; allow movement outside the normal limits

@@ -6,6 +6,11 @@
 ;     M291 S1 T5 P{"Please return tool "^iterations^" to dock before homing"} R"Cannot home"
 ;     abort
 
+; Check tool detect switch
+if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
+    M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
+    abort
+
 M98 P"homec.g"			; Home C (ToolHead)
 M98 P"homey.g"			; Home Y
 M98 P"homex.g"			; Home X
