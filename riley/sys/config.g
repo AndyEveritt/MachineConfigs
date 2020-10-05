@@ -91,7 +91,7 @@ G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
 ; Tool offsets, adding to vales brings the plane closer to the tool
 G10 P0 X19.5 Y42.5 Z-5.2				; T0 (X0 | Y0 | Z0)
-G10 P1 X19.5 Y42.5 Z-5.35				; T0 (X0 | Y0 | Z0)
+G10 P1 X19.5 Y42.5 Z-5.45				; T0 (X0 | Y0 | Z0)
 
 M593 F50								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
 M376 H15								; bed compensation taper
