@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<profile name="Riley" version="2020-09-23 10:54:36" app="S3D-Software 4.1.2">
+<profile name="Riley" version="2020-10-07 11:25:12" app="S3D-Software 4.1.2">
   <baseProfile>Generic Dual Extrusion Profile (modified)</baseProfile>
-  <printMaterial>MatX</printMaterial>
+  <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
   <printExtruders>Both Extruders</printExtruders>
   <extruder name="T0">
     <toolheadNumber>0</toolheadNumber>
-    <diameter>0.4</diameter>
+    <diameter>0.6</diameter>
     <autoWidth>1</autoWidth>
-    <width>0.48</width>
+    <width>0.72</width>
     <extrusionMultiplier>1</extrusionMultiplier>
     <useRetract>1</useRetract>
     <retractionDistance>2.5</retractionDistance>
@@ -41,7 +41,7 @@
   <topSolidLayers>4</topSolidLayers>
   <bottomSolidLayers>4</bottomSolidLayers>
   <perimeterOutlines>3</perimeterOutlines>
-  <printPerimetersInsideOut>0</printPerimetersInsideOut>
+  <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>1</startPointOption>
   <startPointOriginX>150</startPointOriginX>
   <startPointOriginY>200</startPointOriginY>
@@ -78,7 +78,7 @@
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Full Honeycomb</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
-  <infillPercentage>25</infillPercentage>
+  <infillPercentage>15</infillPercentage>
   <outlineOverlapPercentage>20</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
   <minInfillLength>1</minInfillLength>
@@ -86,7 +86,7 @@
   <internalInfillAngles>0,120,-120</internalInfillAngles>
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>0</generateSupport>
+  <generateSupport>1</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>20</supportInfillPercentage>
   <supportExtraInflation>0.5</supportExtraInflation>
@@ -102,14 +102,9 @@
   <supportGridSpacing>2</supportGridSpacing>
   <maxOverhangAngle>55</maxOverhangAngle>
   <supportAngles>45</supportAngles>
-  <temperatureController name="Primary Extruder">
-    <temperatureNumber>0</temperatureNumber>
-    <isHeatedBed>0</isHeatedBed>
-    <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="190"/>
-  </temperatureController>
   <fanSpeed>
-    <setpoint layer="1" speed="0"/>
+    <setpoint layer="1" speed="60"/>
+    <setpoint layer="2" speed="100"/>
   </fanSpeed>
   <blipFanToFullPower>0</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
@@ -151,7 +146,7 @@
   <baudRateOverride>115200</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride></printerModelsOverride>
-  <startingGcode>G29 S1</startingGcode>
+  <startingGcode>G29 S1,M116	; wait for temps to settle</startingGcode>
   <layerChangeGcode>;Clean the nozzle must use a hardened nozzle!,;M98 P&quot;brush.g&quot;</layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode>T[new_tool]</toolChangeGcode>
@@ -274,7 +269,7 @@
     <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>25</infillPercentage>
+    <infillPercentage>15</infillPercentage>
     <supportInfillPercentage>20</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="High">
@@ -319,7 +314,7 @@
     <useSkirt>1</useSkirt>
     <usePrimePillar>0</usePrimePillar>
     <useOozeShield>0</useOozeShield>
-    <startingGcode>G29 S1</startingGcode>
+    <startingGcode>G29 S1,M116	; wait for temps to settle</startingGcode>
   </autoConfigureExtruders>
   <autoConfigureMaterial name="MatX">
     <fanSpeed>
@@ -330,6 +325,12 @@
     <fanSpeed>
       <setpoint layer="1" speed="60"/>
       <setpoint layer="2" speed="100"/>
+    </fanSpeed>
+  </autoConfigureMaterial>
+  <autoConfigureMaterial name="PET">
+    <fanSpeed>
+      <setpoint layer="1" speed="30"/>
+      <setpoint layer="2" speed="80"/>
     </fanSpeed>
   </autoConfigureMaterial>
 </profile>

@@ -59,7 +59,7 @@ M143 H0 S225 							            ; Set temperature limit for heater 0 to 225C
 M140 H0									            ; Bed heater is heater 0
 
 ; Tool 0 heater
-M308 S1 P"temp1" Y"thermistor" A"HC - 0.4" T100000 B4725 C7.06e-8 	; Set thermistor
+M308 S1 P"temp1" Y"thermistor" A"HC - 0.6" T100000 B4725 C7.06e-8 	; Set thermistor
 M950 H1 C"out2" T1						; Extruder 0 heater
 M143 H1 S300 							; Set temperature limit for heater 1 to 300C
 
@@ -90,7 +90,7 @@ G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
 ; Tool offsets, adding to vales brings the plane closer to the tool
-G10 P0 X19.5 Y42.5 Z-5.2				; T0 (X0 | Y0 | Z0)
+G10 P0 X19.5 Y42.5 Z-5.25				; T0 (X0 | Y0 | Z0)
 G10 P1 X19.5 Y42.5 Z-5.45				; T0 (X0 | Y0 | Z0)
 
 M593 F50								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
