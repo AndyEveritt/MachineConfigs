@@ -1,6 +1,14 @@
 ; tfree0.g
 ; called when tool 0 is freed
 
+; Check tool detect switch
+if sensors.gpIn[0] != null && sensors.gpIn[0].value = 0
+    M291 S2 P{"No tool on toolhead"} R"Tool Change Error"
+    T-1 P0
+    M98 P"resetaxislimit.g"
+    M564 S1								; apply the normal limits again
+    abort
+
 ;Drop the bed
 G91
 G1 Z4 F1000
