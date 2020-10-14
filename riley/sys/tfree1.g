@@ -1,6 +1,12 @@
 ; tfree0.g
 ; called when tool 0 is freed
 
+;Cancel tool detect switch trigger
+; M581 T2 P-1
+
+; Check tool detect switch
+M98 P"tooldetect.g"
+
 ;Drop the bed
 G91
 G1 Z4 F1000

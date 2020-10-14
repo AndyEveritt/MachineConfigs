@@ -99,5 +99,5 @@ M376 H15								; bed compensation taper
 ; Bowden tubes are ~700mm long so PA on the Bowden tools almost certainly needs to be increased
 ;M572 D0 S0.05 							; pressure advance T0
 
-; Set up the dock indicator switches on the Hemera tools. These are wired NO so invert the pin.
-M950 J0 C"io1.in"					; GpIn 2 = tool 2 dock switch
+; Set up the tool detect switch.
+M950 J0 C"io1.in"					; GpIn 0 = tool detect switch
