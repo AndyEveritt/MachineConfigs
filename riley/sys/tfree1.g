@@ -2,13 +2,10 @@
 ; called when tool 0 is freed
 
 ;Cancel tool detect switch trigger
-M581 T2 P-1
+; M581 T2 P-1
 
 ; Check tool detect switch
-if sensors.gpIn[0] != null && sensors.gpIn[0].value = 0
-    M291 S2 P{"No tool on toolhead"} R"Tool Change Error"
-    T-1 P0
-    abort
+M98 P"tooldetect.g"
 
 ;Drop the bed
 G91

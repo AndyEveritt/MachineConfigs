@@ -4,6 +4,9 @@
 ;Ensure no tool is selected
 ;T-1
 
+;Set tool detect switch trigger
+; M581 T2 P0 S0
+
 ;Unlock Coupler
 M98 P"/macros/Tool Control/Coupler - Unlock"
 M400
@@ -19,6 +22,7 @@ G1 X-9 Y220 F5000
 ;Collect
 G1 X-9 Y226.2 F2000
 
+M400
 ;Close Coupler
 M98 P"/macros/Tool Control/Coupler - Lock"
 M400
@@ -39,7 +43,4 @@ M208 X-17.5:317.5 Y154
 M564 S1
 
 ; Check tool detect switch
-if sensors.gpIn[0] != null && sensors.gpIn[0].value = 0
-    M291 S2 P{"Tool detect switch not triggered"} R"Tool Change Error"
-    T-1 P0
-    abort
+M98 P"tooldetect.g"
