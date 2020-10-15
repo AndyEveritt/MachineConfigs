@@ -34,7 +34,7 @@ G53 G1 X81.1 Y226.8 F2000
 M98 P"/macros/Tool Control/Coupler - Unlock"
 
 ;fan off
-M106 P2 S0
+M106 P4 S0
 
 ;Move Out
 G53 G1 X81.1 Y150 F2000

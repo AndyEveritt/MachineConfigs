@@ -14,7 +14,7 @@ M400
 M564 S0 ; allow movement outside the normal limits
 
 ;Move to location
-G1 X81.1 Y180 F20000
+G1 X81.1 Y180 F10000
 
 ;Move in
 G1 X81.1 Y220 F5000
