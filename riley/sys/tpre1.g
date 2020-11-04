@@ -41,6 +41,7 @@ M400
 
 ;Move Out
 G1 X81.1 Y150 B4.25 F2000
+M400
 
 ; set Y max for this tool
 M208 X-17.5:317.5 Y154
