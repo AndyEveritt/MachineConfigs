@@ -34,7 +34,6 @@ M201 X6000 Y6000 Z400 C500 E1000:1000            			; Set accelerations (mm/s^2)
 M906 X2000 Y2000 Z1330 C500 E1340:1340 I30               	; Set motor currents (mA) and motor idle factor in percent
 M84 C S10 												; Set idle timeout
 M84 X Y Z S120 											; Set idle timeout
-
 ; Endstops
 M574 X1 Y1 S3 							; Set X / Y endstop stall detection
 M574 Z0 								; No Z endstop
@@ -90,8 +89,8 @@ G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
 ; Tool offsets, adding to vales brings the plane closer to the tool
-G10 P0 X19.5 Y42.5 Z-5.25				; T0 (X0 | Y0 | Z0)
-G10 P1 X19.5 Y42.5 Z-5.35				; T0 (X0 | Y0 | Z0)
+G10 P0 X19.5 Y42.5 Z-5.20				; T0 (X0 | Y0 | Z0)
+G10 P1 X19.5 Y42.5 Z-5.28				; T0 (X0 | Y0 | Z0)
 
 M593 F50								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
 M376 H15								; bed compensation taper

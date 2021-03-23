@@ -5,7 +5,7 @@
 ; M581 T2 P-1
 
 ; Check tool detect switch
-M98 P"tooldetect.g"
+M98 P"tooldetectpre.g"
 
 ;Drop the bed
 G91
@@ -35,6 +35,12 @@ M98 P"/macros/Tool Control/Coupler - Unlock"
 
 ;fan off
 M106 P4 S0
+
+; Check tool detect switch
+G91
+G1 Y-5 F1000
+G90
+M98 P"tooldetectpost.g"
 
 ;Move Out
 G53 G1 X81.1 Y150 F2000
