@@ -6,4 +6,4 @@ This repo contains 3D printer configuration and print profiles.
 
 Name | Description | Control Board | Firmware
 ---- | ----------- | ------------- | --------
-Riley | E3D Toolchanger | Duet 3 | RRF3.2beta2
+Riley | E3D Toolchanger | Duet 3 | RRF3.3.beta2
