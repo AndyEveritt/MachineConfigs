@@ -2,6 +2,6 @@
 /gcodes/
 /scans/
 /menu/
-/sys/closed-loop
+/sys/closed-loop/
 *.uf2
 *.bin

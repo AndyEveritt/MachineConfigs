@@ -23,9 +23,9 @@ M569 P3.0 S0 D4						; Drive 2 X
 M569 P1.0 S1 						; Drive 3 E0
 M569 P4 S0 						; Drive 4 E1
 M569 P5 S1						; Drive 5 Brush
-M569 P1.2 S1 					; Drive 1.2 COUPLER
+M569 P4.0 S1 					; Drive 1.2 COUPLER
 
-M584 X3.0 Y2.0 Z0 C1.2 B5			; Axis to driver mapping
+M584 X3.0 Y2.0 Z0 C4.0 B5			; Axis to driver mapping
 M584 E1.0:4         				; set extruder drivers
 
 M98 P"resetaxislimit.g"                                 ; Set axis maxima & minima
@@ -42,13 +42,14 @@ M84 B C S10 											; Set idle timeout
 M84 X Y Z S120 											; Set idle timeout
 
 ; Endstops
-M574 X1 Y1 S3 							; Set X / Y endstop stall detection
+M574 X1 P"4.io1.in" S1 							; Set X / Y endstop stall detection
+M574 Y1 P"4.io0.in" S1 							; Set X / Y endstop stall detection
 M574 Z0 								; No Z endstop
 M574 B2 S3		 						; Set B endstop stall detection
 M574 C1 S3								; Stall detect coupler at low end of its range
 
 ; Z probe
-M558 K0 P8 A1 C"io0.in" H3 F360 T50000 	; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
+M558 K0 P8 A1 C"4.io2.in" H3 F360 T50000 	; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
 G31 K0 P200 X0 Y0 Z0	 					; Set Z probe trigger value, offset and trigger height
 M98 P"resetmeshgrid.g" 			; Define mesh grid
 
