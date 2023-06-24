@@ -1,1 +1,1 @@
-M208 X-30.2:333 Y-50.5:200 Z0:288 B0:60				; Set axis maxima & minima
+M208 X-20.2:336 Y-49:200 Z0:288 B0:60				; Set axis maxima & minima

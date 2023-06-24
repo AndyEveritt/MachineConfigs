@@ -43,7 +43,7 @@ M84 X Y Z S120 											; Set idle timeout
 
 ; Endstops
 M574 X1 P"4.io1.in" S1 							; Set X / Y endstop stall detection
-M574 Y1 P"4.io0.in" S1 							; Set X / Y endstop stall detection
+M574 Y2 P"4.io0.in" S1 							; Set X / Y endstop stall detection
 M574 Z0 								; No Z endstop
 M574 B2 S3		 						; Set B endstop stall detection
 M574 C1 S3								; Stall detect coupler at low end of its range
