@@ -1,24 +1,48 @@
 ;Drop Bed
 G91
-G1 Z10 F2000
+G1 Z3 F1500
 G90
 
-; Brush In
-G1 X-25.5 Y160 F50000
-G1 X-33.5 Y157
-G1 X-25.5 Y154
-G1 X-33.5 Y151
-G1 X-25.5 Y148
-G1 X-33.5 Y145
-G1 X-25.5 Y142
-G1 X-33.5 Y139
-G1 X-25.5 Y136
-G1 X-33.5 Y133
-G1 X-25.5 Y130
+; set brush height
+if {state.currentTool} = -1
+	abort "Attempting to prime with no tool selected"
+if {state.currentTool} = 0
+	G1 B1.5
+if {state.currentTool} = 1
+	G1 B1.5
 
-; Brush Out
-G1 X-33.5 Y130 F50000
-G1 X-31.5 Y160 
-G1 X-29.5 Y130
-G1 X-27.5 Y160
-G1 X-25.5 Y130
+var brush_x_min = 320
+var brush_x_max = 332
+var brush_y_min = 126
+var brush_y_max = 164
+
+var wiper_x = 325
+var wiper_y = 112
+
+var brush_width = {var.brush_x_max - var.brush_x_min}
+var brush_length = {var.brush_y_max - var.brush_y_min}
+
+var prime_x = {var.wiper_x}
+var prime_y = {var.wiper_y - 7}
+
+;brush in
+G1 X{var.brush_x_min} Y{var.brush_y_max} F10000
+G1 X{var.brush_x_min + 0.25*var.brush_width} Y{var.brush_y_min} F10000
+G1 X{var.brush_x_min + 0.5*var.brush_width} Y{var.brush_y_max} F10000
+G1 X{var.brush_x_min + 0.75*var.brush_width} Y{var.brush_y_min} F10000
+G1 X{var.brush_x_max} Y{var.brush_y_max} F10000
+
+;Run in
+G1 X{var.brush_x_min + 0.5*var.brush_width} Y{var.brush_y_min} F10000
+
+;Brush Out
+G1 X{var.brush_x_min} Y{var.brush_y_max} F10000
+G1 X{var.brush_x_min + 0.25*var.brush_width} Y{var.brush_y_min} F10000
+G1 X{var.brush_x_min + 0.5*var.brush_width} Y{var.brush_y_max} F10000
+G1 X{var.brush_x_min + 0.75*var.brush_width} Y{var.brush_y_min} F10000
+G1 X{var.brush_x_max} Y{var.brush_y_max} F10000
+
+;Brush Down
+G1 B20 F2000
+
+G1 X{var.prime_x} Y{var.prime_y} F10000

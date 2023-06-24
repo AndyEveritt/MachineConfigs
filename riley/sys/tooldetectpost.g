@@ -1,4 +1,5 @@
 ; Check tool detect switch
+G4 P0.15
 
 ; picking new tool up
 if state.currentTool == -1

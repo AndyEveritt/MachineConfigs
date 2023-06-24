@@ -1,0 +1,7 @@
+/www/
+/gcodes/
+/scans/
+/menu/
+/sys/closed-loop
+*.uf2
+*.bin

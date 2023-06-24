@@ -1,0 +1,2 @@
+echo "global.param V:", global."{param.V}"
+echo "global.lastTool:", global.lastTool

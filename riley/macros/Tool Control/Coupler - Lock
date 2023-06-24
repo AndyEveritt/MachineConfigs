@@ -1,6 +1,16 @@
 M120
 G90
 M913 C100
-G1 C33 F2500
+G1 C96 F5000
 M913 C50
 M121
+
+;echo "Locking...Current Tool:", {state.currentTool}, "Next Tool:", {state.nextTool}
+var tool = {state.nextTool}
+
+if {state.currentTool} == {state.nextTool}
+	echo "Manually locking tool, active tool unknown"
+	set var.tool = -2
+	
+M98 P"/macros/Tool Control/Save Tool Num" T{var.tool}
+;echo "Global Tool Num:", {global.lastTool}

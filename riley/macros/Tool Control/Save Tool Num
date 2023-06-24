@@ -1,0 +1,9 @@
+if exists(global.lastTool)
+	if {param.T} == {global.lastTool}
+		pass
+	else
+		M98 P"persistantglobal.g" V"lastTool" X{param.T}
+		;echo "set tool num:", {param.T}
+else
+	M98 P"persistantglobal.g" V"lastTool" X{param.T}
+	;echo "set tool num:", {param.T}

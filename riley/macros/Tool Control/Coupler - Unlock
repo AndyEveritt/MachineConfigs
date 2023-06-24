@@ -1,6 +1,15 @@
 M120
 G90
 M913 C100
-G1 C129 F2500
+G1 C0 F5000
 M913 C50
 M121
+
+;echo "Unlocking...Current Tool:", {state.currentTool}, "Next Tool:", {state.nextTool}
+
+if {state.currentTool} == {state.nextTool} & {global.lastTool != -1}
+	T-1 P0
+	M98 P"resetaxislimit.g"
+	echo "Manually removed tool, setting active tool to T-1"
+
+M98 P"/macros/Tool Control/Save Tool Num" T-1

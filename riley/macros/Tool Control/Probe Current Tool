@@ -1,0 +1,4 @@
+if state.currentTool != -1
+	M98 P"probetool.g" T{state.currentTool}
+else
+	echo "Select a tool before probing"

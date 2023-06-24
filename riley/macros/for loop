@@ -1,0 +1,4 @@
+;var i = 0
+while exists(tools[param.T].offsets[iterations])
+    echo {tools[param.T].offsets[iterations]}
+    ;set var.i = var.i + 1

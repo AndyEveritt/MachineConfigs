@@ -1,1 +1,2 @@
-rrgit
+-e git+ssh://git@github.com/AndyEveritt/rrgit.git#egg=rrgit
+-e git+ssh://git@github.com/AndyEveritt/DuetWebAPI@v1.4#egg=duetwebapi

@@ -17,7 +17,7 @@ M400 				; make sure everything has stopped before we change the motor currents
 M913 X20 Y20 		; drop motor currents to 25%
 
 G1 H2 Z3 F5000		; Lower the bed
-G1 H1 X-400 F3000 	; move left 400mm, stopping at the endstop
+G1 H1 X-400 F5000 	; move left 400mm, stopping at the endstop
 G1 H1 X2 F2000 	; move away from end
 G1 H1 X-400 F3000 	; repeat the homing move because it doesn't always work first time
 G1 H1 X2 F2000 	; move away from end

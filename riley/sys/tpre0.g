@@ -10,21 +10,24 @@
 ; Check tool detect switch
 M98 P"tooldetectpre.g"
 
-echo "doing tpre"
-
 ;Unlock Coupler
 M98 P"/macros/Tool Control/Coupler - Unlock"
 
 M564 S0 ; allow movement outside the normal limits
 
+var tool_x = -8.4
+var tool_y = 226.5
+
+var pickup_speed = 2000
+var movein_speed = 5000
+var movement_speed = 15000
+
 ;Move to location
-G1 X-9 Y180 F15000
-
+G1 X{var.tool_x} Y{var.tool_y - 30} F{var.movement_speed}
 ;Move in
-G1 X-9 Y220 F10000
-
+G1 Y{var.tool_y - 10} F{var.movein_speed}
 ;Collect
-G1 X-9 Y226.2 F2000
+G1 Y{var.tool_y} F{var.pickup_speed}
 
 ;Close Coupler
 M98 P"/macros/Tool Control/Coupler - Lock"
@@ -32,7 +35,7 @@ M98 P"/macros/Tool Control/Coupler - Lock"
 ;WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING!
 ;if you are using non-standard length hotends ensure the bed is lowered enough BEFORE undocking the tool!
 G91
-G1 Z13.5 F1000
+G1 Z15 F1000
 G1 Y-5 F1000
 G90
 
@@ -40,12 +43,11 @@ G90
 M98 P"tooldetectpost.g"
 
 ;Move Out
-G1 X-9 Y150 B4.25 F5000
+G1 Y{var.tool_y - 15} F{var.pickup_speed}
+G1 Y{var.tool_y - 100} F{var.movement_speed}
 
 ; set Y max for this tool
-M208 X-17.5:317.5 Y154
+M208 X-17.5:317.5 Y147
 
 ; apply the normal limits again
 M564 S1
-
-echo "finished tpre"

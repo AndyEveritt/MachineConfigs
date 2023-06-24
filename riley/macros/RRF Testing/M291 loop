@@ -1,0 +1,12 @@
+while true
+	if iterations = 2
+		abort "maximum reached"
+	var text = "Loop" ^ iterations
+	M291 R{var.text} P"Press OK to begin" S2
+	while true
+		if iterations = 10
+			break
+		var thisText = "Iteration = " ^ {iterations + 1}
+		M291 R"Counting" P{"Iteration = " ^ {iterations + 1}} S0
+		G4 P500
+		M292 P0

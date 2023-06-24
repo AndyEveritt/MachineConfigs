@@ -1,0 +1,14 @@
+if state.currentTool != -1
+	G91
+	G1 Z10 F1000
+	G90
+	M98 P"brush.g"
+	G1 X316.6 Y-6.8 F10000
+	G30 K1 S-2
+	G91
+	G1 Z5 F1000
+	G90
+	M500 P10
+	G10 P{state.currentTool}
+else
+	echo "Select a tool before probing"
