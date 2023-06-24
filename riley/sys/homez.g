@@ -2,9 +2,9 @@
 ; called to home the Z axis
 
 ; Check tool detect switch
-if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
-    M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
-    abort
+; if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
+;     M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
+;     abort
 
 if {global.lastTool} != -1			; second check
 	abort "Tool loaded"

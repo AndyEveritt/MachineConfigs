@@ -8,7 +8,7 @@
 ; M581 T2 P0 S0
 
 ; Check tool detect switch
-M98 P"tooldetectpre.g"
+;M98 tooldetectpre.g"
 
 ;Unlock Coupler
 M98 P"/macros/Tool Control/Coupler - Unlock"
@@ -57,7 +57,7 @@ else
 	;G1 Z{move.axes[2].max} F1000
 
 ; Check tool detect switch
-;M98 P"tooldetectpost.g"
+;M98 tooldetectpost.g"
 
 ;Move Out
 G1 B10										; Move brush to clearance position

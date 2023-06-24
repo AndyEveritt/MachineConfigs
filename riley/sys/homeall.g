@@ -7,9 +7,9 @@
 ;     abort
 
 ; Check tool detect switch
-if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
-    M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
-    abort
+; if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
+;     M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
+;     abort
 
 M98 P"homeb.g"			; Home B (Right Brush)
 M98 P"homec.g"			; Home C (ToolHead)

@@ -5,7 +5,7 @@
 ; M581 T2 P-1
 
 ; Check tool detect switch
-M98 P"tooldetectpre.g"
+;M98 tooldetectpre.g"
 
 ;Drop the bed
 if (move.axes[2].machinePosition < move.axes[2].max)
@@ -49,7 +49,7 @@ G91
 G1 Y-5 F1000
 G90
 
-M98 P"tooldetectpost.g"
+;M98 tooldetectpost.g"
 
 ;Move Out
 G53 G1 Y180 F10000

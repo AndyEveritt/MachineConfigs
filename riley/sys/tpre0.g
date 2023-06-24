@@ -8,7 +8,7 @@
 ; M581 T2 P0 S0
 
 ; Check tool detect switch
-M98 P"tooldetectpre.g"
+;M98 tooldetectpre.g"
 
 ;Unlock Coupler
 M98 P"/macros/Tool Control/Coupler - Unlock"
@@ -40,7 +40,7 @@ G1 Y-5 F1000
 G90
 
 ; Check tool detect switch
-M98 P"tooldetectpost.g"
+;M98 tooldetectpost.g"
 
 ;Move Out
 G1 Y{var.tool_y - 15} F{var.pickup_speed}
