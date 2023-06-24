@@ -15,10 +15,10 @@ M98 P"/macros/Tool Control/Coupler - Unlock"
 
 M564 S0 ; allow movement outside the normal limits
 
-var tool_x = -8.4
-var tool_y = 226.5
+var tool_x = -11.2
+var tool_y = 216.5
 
-var pickup_speed = 2000
+var pickup_speed = 1000
 var movein_speed = 5000
 var movement_speed = 15000
 
@@ -44,7 +44,7 @@ G90
 
 ;Move Out
 G1 Y{var.tool_y - 15} F{var.pickup_speed}
-G1 Y{var.tool_y - 100} F{var.movement_speed}
+G1 Y{var.tool_y - 100} F{var.movein_speed}
 
 ; set Y max for this tool
 M208 X-17.5:317.5 Y147
