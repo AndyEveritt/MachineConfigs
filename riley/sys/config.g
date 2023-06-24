@@ -20,13 +20,13 @@ M569.1 P3.0 T3 R30 I1000 D0 V0 A0
 M569 P0 S1 						; Drive 0 Z
 M569 P2.0 S0 D4						; Drive 1 Y
 M569 P3.0 S0 D4						; Drive 2 X
-M569 P1.0 S1 						; Drive 3 E0
-M569 P4 S0 						; Drive 4 E1
+M569 P5.0 S0 						; Drive 3 E0
+M569 P6.0 S0 						; Drive 4 E1
 M569 P5 S1						; Drive 5 Brush
 M569 P4.0 S1 					; Drive 1.2 COUPLER
 
 M584 X3.0 Y2.0 Z0 C4.0 B5			; Axis to driver mapping
-M584 E1.0:4         				; set extruder drivers
+M584 E5.0:6.0         				; set extruder drivers
 
 M98 P"resetaxislimit.g"                                 ; Set axis maxima & minima
 M208 C0:120				                                ; Set axis maxima & minima
@@ -72,34 +72,34 @@ M143 H0 S225 							            ; Set temperature limit for heater 0 to 225C
 M140 H0									            ; Bed heater is heater 0
 
 ; Tool 0 heater
-M308 S1 P"temp1" Y"thermistor" A"V7" T100000 B4725 C7.06e-8 	; Set thermistor
-M950 H1 C"out2" T1						; Extruder 0 heater
+M308 S1 P"5.temp0" Y"thermistor" A"Revo 60W" T100000 B4725 C7.06e-8 	; Set thermistor
+M950 H1 C"5.out0" T1						; Extruder 0 heater
 M143 H1 S300 							; Set temperature limit for heater 1 to 300C
 
 ; Tool 1 heater
-M308 S2 P"temp2" Y"thermistor" A"V7" T100000 B4725 C7.06e-8 	; Set thermistor
-M950 H2 C"out3" T2						; Extruder 0 heater
+M308 S2 P"6.temp0" Y"thermistor" A"Revo 60W" T100000 B4725 C7.06e-8 	; Set thermistor
+M950 H2 C"6.out0" T2						; Extruder 0 heater
 M143 H2 S300 							; Set temperature limit for heater 1 to 300C
 
 ; Tool 0 Fans
-M950 F1 C"out8"							; T0 HE
-M950 F2 C"out7"							; T0 PCF
+M950 F1 C"5.out1"							; T0 HE
+M950 F2 C"5.out2"							; T0 PCF
 M106 P1 S255 H1 T70						; T0 HE
 M106 P2 S0								; T0 PCF
 
 ; Tool 1 Fans
-M950 F3 C"out6"							; T1 HE
-M950 F4 C"out9"							; T1 PCF
+M950 F3 C"6.out1"							; T1 HE
+M950 F4 C"6.out2"							; T1 PCF
 M106 P3 S255 H2 T70						; T1 HE
 M106 P4 S0								; T1 PCF
 
 ; Tool 0 - Hemera
-M563 P0 S"T0 - Hemera" D0 H1 F2 		; Define tool 0
+M563 P0 S"T0 - Hemera XS" D0 H1 F2 		; Define tool 0
 G10 P0 X0 Y0 Z0 					    ; Reset tool 0 axis offsets
 G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 
 ; Tool 1 - Hemera
-M563 P1 S"T1 - Hemera" D1 H2 F4 		; Define tool 1
+M563 P1 S"T1 - Hemera XS" D1 H2 F4 		; Define tool 1
 G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
@@ -132,6 +132,8 @@ G28 B
 
 ; Load persistant global variables
 M98 P"globals/lastTool"
+
+G4 S0.5
 if (!exists(global.lastTool))
 	M98 P"persistantglobal.g" V"lastTool" X-2
 
