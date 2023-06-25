@@ -5,17 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: rrgit - Riley",
+            "name": "Python: rrgit - push",
             "type": "python",
             "request": "launch",
             "module": "rrgit",
             "justMyCode": false,
+            "cwd": "${workspaceFolder}/riley",
             "args": [
-                "clone",
-                "riley",
-                "./riley"
+                "push",
             ],
-            "console": "internalConsole"
+            "console": "integratedTerminal"
         }
     ]
 }

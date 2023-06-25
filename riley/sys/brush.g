@@ -7,17 +7,17 @@ G90
 if {state.currentTool} = -1
 	abort "Attempting to prime with no tool selected"
 if {state.currentTool} = 0
-	G1 B1.5
+	G1 B6
 if {state.currentTool} = 1
-	G1 B1.5
+	G1 B6
 
-var brush_x_min = 320
+var brush_x_min = 312
 var brush_x_max = 332
 var brush_y_min = 126
 var brush_y_max = 164
 
-var wiper_x = 325
-var wiper_y = 112
+var wiper_x = 320
+var wiper_y = 114.5
 
 var brush_width = {var.brush_x_max - var.brush_x_min}
 var brush_length = {var.brush_y_max - var.brush_y_min}
