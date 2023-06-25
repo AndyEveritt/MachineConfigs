@@ -3,5 +3,7 @@
 /scans/
 /menu/
 /sys/closed-loop/
+/sys/accelerometer/
+/sys/globals/
 *.uf2
 *.bin

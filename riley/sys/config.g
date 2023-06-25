@@ -18,8 +18,10 @@ M569.1 P3.0 T3 R80 I60 D0.01 V400 A5000
 
 ; Drive direction
 M569 P0 S1 						; Drive 0 Z
-M569 P2.0 S0 D4						; Drive 1 Y
-M569 P3.0 S0 D4						; Drive 2 X
+; M569 P2.0 S0 D4						; Drive 1 Y
+; M569 P3.0 S0 D4						; Drive 2 X
+M569 P2.0 S0						; Drive 1 Y
+M569 P3.0 S0						; Drive 2 X
 M569 P5.0 S0 						; Drive 3 E0
 M569 P6.0 S0 						; Drive 4 E1
 M569 P5 S1						; Drive 5 Brush
@@ -36,7 +38,7 @@ M350 C16 I1
 M350 X16 Y16 Z16 I1										; Configure microstepping with interpolation
 M566 X700 Y700 Z20 C2 B200 E100:100           			; Set maximum instantaneous speed changes (mm/min)
 M203 X35000 Y35000 Z2000 C10000 B3500 E5000:5000        ; Set maximum speeds (mm/min)
-M201 X4000 Y4000 Z400 C500 B500 E1000:1000            	; Set accelerations (mm/s^2)
+M201 X7000 Y7000 Z400 C500 B500 E4000:4000            	; Set accelerations (mm/s^2)
 M906 X2000 Y2000 Z1330 C500 B1000 E1340:1340 I30        ; Set motor currents (mA) and motor idle factor in percent
 M84 B C S10 											; Set idle timeout
 M84 X Y Z S120 											; Set idle timeout
@@ -56,6 +58,11 @@ M98 P"resetmeshgrid.g" 			; Define mesh grid
 ; Tool probe
 M558 K1 P8 C"!io3.in" H5 F360 T1000
 G31 K1 P200 Z0
+
+; Accelerometers
+M955 P4.0 I20
+M955 P5.0 I10
+M955 P6.0 I10
 
 ;Stall Detection
 M915 C S6 F1 H200 R0					; Coupler
@@ -114,14 +121,14 @@ M563 P3 S"T3 - Microscope" 				; Define tool 3
 G10 P3 X0 Y0 Z0 					    ; Reset tool 3 axis offsets
 
 
-M593 F50								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
+M593 P"ei2" F50 S0.05								; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
 M376 H15								; bed compensation taper
 
 ; Bowden tubes are ~700mm long so PA on the Bowden tools almost certainly needs to be increased
 ;M572 D0 S0.05 							; pressure advance T0
 
 ; Set up the tool detect switch.
-M950 J0 C"io1.in"					; GpIn 0 = tool detect switch
+; M950 J0 C"io1.in"					; GpIn 0 = tool detect switch
 
 ; Tool offset configuration
 M501 								; load config-override.g
