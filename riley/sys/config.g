@@ -13,8 +13,8 @@ M550 P"Riley"
 ;M667 S1 						; Select CoreXY mode	
 M669 K1
 
-M569.1 P2.0 T3 R30 I1000 D0 V0 A0
-M569.1 P3.0 T3 R30 I1000 D0 V0 A0
+M569.1 P2.0 T3 R30 I50 D0 V0 A0
+M569.1 P3.0 T3 R30 I50 D0 V0 A0
 
 ; Drive direction
 M569 P0 S1 						; Drive 0 Z

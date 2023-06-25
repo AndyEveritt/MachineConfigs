@@ -10,6 +10,8 @@
 ; Check tool detect switch
 ;M98 tooldetectpre.g"
 
+abort
+
 ;Unlock Coupler
 M98 P"/macros/Tool Control/Coupler - Unlock"
 
@@ -47,7 +49,7 @@ G1 Y{var.tool_y - 15} F{var.pickup_speed}
 G1 Y{var.tool_y - 100} F{var.movement_speed}
 
 ; set Y max for this tool
-M208 X-17.5:317.5 Y147
+M208 X-14:323 Y138
 
 ; apply the normal limits again
 M564 S1

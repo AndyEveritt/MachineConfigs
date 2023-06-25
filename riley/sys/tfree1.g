@@ -7,6 +7,8 @@
 ; Check tool detect switch
 ;M98 tooldetectpre.g"
 
+abort
+
 ;Drop the bed
 if (move.axes[2].machinePosition < move.axes[2].max)
 	G53 G1 Z{min(move.axes[2].machinePosition + 3, move.axes[2].max)} F2000
