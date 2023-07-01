@@ -6,6 +6,7 @@
 /sys/accelerometer/
 /sys/globals/
 /sys/config.g.bak
+/sys/*.csv
 /firmware/
 *.uf2
 *.bin

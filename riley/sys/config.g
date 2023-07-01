@@ -13,8 +13,8 @@ M550 P"Riley"
 ;M667 S1 						; Select CoreXY mode	
 M669 K1
 
-M569.1 P2.0 T3 R170.0 I3000.0 D0.02 V360.0 A50000.0
-M569.1 P3.0 T3 R170.0 I3000.0 D0.02 V360.0 A50000.0
+M569.1 P2.0 T3 R160.0 I7000.0 D0.06 V320.0 A110000.0
+M569.1 P3.0 T3 R160.0 I7000.0 D0.06 V320.0 A110000.0
 
 ; Drive direction
 M569 P0 S1 						; Drive 0 Z
@@ -102,11 +102,13 @@ M106 P4 S0								; T1 PCF
 
 ; Tool 0 - Hemera
 M563 P0 S"T0 - Hemera XS" D0 H1 F2 		; Define tool 0
+M572 D0 S0.03
 G10 P0 X0 Y0 Z0 					    ; Reset tool 0 axis offsets
 G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 
 ; Tool 1 - Hemera
 M563 P1 S"T1 - Hemera XS" D1 H2 F4 		; Define tool 1
+M572 D1 S0.03
 G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
