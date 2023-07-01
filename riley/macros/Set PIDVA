@@ -1,4 +1,2 @@
-M569.1 P2.0 T3 R{param.R} I{param.I} D{param.D} V{param.V} A{param.A} E0:0
-M569.1 P3.0 T3 R{param.R} I{param.I} D{param.D} V{param.V} A{param.A} E0:0
-M569 P2.0 S0 D4						; Drive 1 Y
-M569 P3.0 S0 D4						; Drive 2 X
+M569.1 P2.0 R{param.R} I{param.I} D{param.D} V{param.V} A{param.A} E0:0
+M569.1 P3.0 R{param.R} I{param.I} D{param.D} V{param.V} A{param.A} E0:0

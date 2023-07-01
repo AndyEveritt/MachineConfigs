@@ -13,15 +13,15 @@ M550 P"Riley"
 ;M667 S1 						; Select CoreXY mode	
 M669 K1
 
-M569.1 P2.0 T3 R80 I60 D0.01 V400 A5000
-M569.1 P3.0 T3 R80 I60 D0.01 V400 A5000
+M569.1 P2.0 T3 R170.0 I3000.0 D0.02 V360.0 A50000.0
+M569.1 P3.0 T3 R170.0 I3000.0 D0.02 V360.0 A50000.0
 
 ; Drive direction
 M569 P0 S1 						; Drive 0 Z
-; M569 P2.0 S0 D4						; Drive 1 Y
-; M569 P3.0 S0 D4						; Drive 2 X
-M569 P2.0 S0						; Drive 1 Y
-M569 P3.0 S0						; Drive 2 X
+M569 P2.0 S0 D4						; Drive 1 Y
+M569 P3.0 S0 D4						; Drive 2 X
+;M569 P2.0 S0						; Drive 1 Y
+;M569 P3.0 S0						; Drive 2 X
 M569 P5.0 S0 						; Drive 3 E0
 M569 P6.0 S0 						; Drive 4 E1
 M569 P5 S1						; Drive 5 Brush

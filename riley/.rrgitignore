@@ -5,5 +5,7 @@
 /sys/closed-loop/
 /sys/accelerometer/
 /sys/globals/
+/sys/config.g.bak
+/firmware/
 *.uf2
 *.bin
