@@ -7,8 +7,6 @@
 ; Check tool detect switch
 ;M98 tooldetectpre.g"
 
-abort
-
 ;Drop the bed
 if (move.axes[2].machinePosition < move.axes[2].max)
 	G53 G1 Z{min(move.axes[2].machinePosition + 3, move.axes[2].max)} F2000
@@ -18,11 +16,11 @@ M564 S0 ; allow movement outside the normal limits
 ;mesh levelling off
 G29 S2
 
-var tool_x = 80.6
-var tool_y = 226.8
+var tool_x = 88.2
+var tool_y = 216.4
 
-var drop_off_speed = 2000
-var movein_speed = 5000
+var drop_off_speed = 1000
+var movein_speed = 8000
 var movement_speed = 15000
 
 ;Purge nozzle
@@ -48,13 +46,12 @@ M106 P4 S0
 
 ; Check tool detect switch
 G91
-G1 Y-5 F1000
+G1 Y-5 F{var.drop_off_speed}
 G90
-
 ;M98 tooldetectpost.g"
 
 ;Move Out
-G53 G1 Y180 F10000
+G53 G1 Y180 F{var.movein_speed}
 
 M98 P"resetaxislimit.g"
 M564 S1								; apply the normal limits again
