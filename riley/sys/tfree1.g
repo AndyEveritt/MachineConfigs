@@ -24,7 +24,7 @@ var movein_speed = 8000
 var movement_speed = 15000
 
 ;Purge nozzle
-if heat.heaters[2].active > heat.coldExtrudeTemperature
+if job.file.fileName != null
     ;M98 P"purge.g"
 	G1 E-8 F300
 
