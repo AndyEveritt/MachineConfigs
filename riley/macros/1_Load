@@ -1,0 +1,22 @@
+var currentTool = state.currentTool
+
+var toolNums    = {0, 1}
+var toolNumsStr = {"0", "1"}
+M291 R"Tool Number" P"Select tool number" J1 S4 K{var.toolNumsStr}
+var toolNum = var.toolNums[input]
+echo "Selected tool", var.toolNum
+var currentTemperature = tools[var.toolNum].active[0]
+
+M291 R"Temperature" P"Enter temperature" J1 S6 L160 H350
+var temperature = input
+echo "Selected temperature =", var.temperature
+
+M568 P{var.toolNum} S{var.temperature} A2
+T{var.toolNum} P0
+M116 P{var.toolNum}
+
+G1 E25 F900
+G1 E60 F300
+
+T{var.currentTool} P0
+M568 P{var.toolNum} S{var.currentTemperature}

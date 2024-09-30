@@ -1,3 +1,5 @@
+abort "brush.g not supported"
+
 ;Drop Bed
 G91
 G1 Z3 F1500
@@ -7,9 +9,9 @@ G90
 if {state.currentTool} = -1
 	abort "Attempting to prime with no tool selected"
 if {state.currentTool} = 0
-	G1 B6
+	G1 B7
 if {state.currentTool} = 1
-	G1 B6
+	G1 B7
 
 var brush_x_min = 312
 var brush_x_max = 332

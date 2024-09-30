@@ -153,3 +153,4 @@ Slicer Profiles/SuperSlicer/PrusaSlicerGcodeViewer.ini
 Slicer Profiles/SuperSlicer/SuperSlicer.ini
 *.zip
 *.bak
+*.csv

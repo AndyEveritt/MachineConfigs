@@ -17,4 +17,4 @@ M98 P"homex.g"			; Home X
 M98 P"homey.g"			; Home Y
 M98 P"homez.g"			; Home Z
 
-G1 X150 Y-49 F15000		; Park
+M98 P"/macros/Park"

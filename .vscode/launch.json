@@ -15,6 +15,18 @@
                 "push",
             ],
             "console": "integratedTerminal"
-        }
+        },
+        {
+            "name": "Python: rrgit - pull",
+            "type": "python",
+            "request": "launch",
+            "module": "rrgit",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/riley",
+            "args": [
+                "pull",
+            ],
+            "console": "integratedTerminal"
+        },
     ]
 }

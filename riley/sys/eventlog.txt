@@ -1,0 +1,288 @@
+﻿2024-08-21 11:21:02 Event logging started
+2024-08-21 11:21:06 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:11 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:16 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:20 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:25 Event logging is enabled at log level debug
+2024-08-21 11:21:25 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:30 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:35 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:39 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:44 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:49 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:53 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:21:58 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:03 Diagnostics for board 5:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 7600, free system stack 108 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,nWait 6,3.6%,52) HEAT(2,nWait 6,0.2%,124) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,72) CanClock(5,nWait 1,0.0%,60) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.4%,320) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.8%,112), total 100.0%
+Owned mutexes:
+Last reset 00:03:14 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.49ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 22500.000000
+Peak sync jitter 4/14, peak Rx sync delay 231, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4149117497 ticks, disabled
+VIN voltage: min 24.3, current 24.4, max 24.5
+MCU temperature: min 38.8C, current 40.0C, max 40.0C
+Driver 0: pos 0, 396.0 steps/mm, standstill, SG min 4, read errors 0, write errors 1, ifcnt 95, reads 31677, writes 12, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000002 found 1 221 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 3922, send timeouts 0, received 2489, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 3, contentions 0, other errors 0
+=== Filament sensors ===
+Interrupt 4 to 9us, poll 6 to 565us
+Driver 0: pos 2503.5, errs: frame 0 parity 0 ovrun 0 pol 0 ovdue 0
+2024-08-21 11:22:03 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:08 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:10 Diagnostics for board 6:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+1 (2024-08-20 10:26:16)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 7696, free system stack 108 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,delaying,3.6%,52) HEAT(2,nWait 6,0.2%,128) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,70) CanClock(5,nWait 1,0.0%,58) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.5%,318) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.7%,112), total 100.0%
+Owned mutexes:
+Last reset 00:03:21 ago, cause: software
+Last software reset data not available
+Driver 0: pos 0, 396.0 steps/mm, standstill, SG min 0, read errors 0, write errors 1, ifcnt 38, reads 35346, writes 12, timeouts 0, DMA errors 0, CC errors 0
+Moves scheduled 0, hiccups 0 (0.00ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00
+Peak sync jitter 5/16, peak Rx sync delay 231, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4143606268 ticks, disabled
+VIN voltage: min 24.3, current 24.4, max 24.5
+MCU temperature: min 35.2C, current 36.6C, max 36.6C
+Last sensors broadcast 0x00000004 found 1 67 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 4070, send timeouts 0, received 2585, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 3, contentions 0, other errors 0
+=== Filament sensors ===
+Interrupt 4 to 9us, poll 8 to 692us
+Driver 0: pos 2160.0, errs: frame 0 parity 0 ovrun 0 pol 0 ovdue 0
+2024-08-21 11:22:12 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:17 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:22 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:27 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:31 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:36 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:41 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:45 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:50 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:55 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:22:59 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:04 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:09 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:10 Diagnostics for board 5:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 7600, free system stack 108 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,delaying,3.6%,52) HEAT(2,nWait 6,0.2%,124) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,72) CanClock(5,nWait 1,0.0%,60) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.4%,320) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.8%,112), total 100.0%
+Owned mutexes:
+Last reset 00:04:21 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.49ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 22500.000000
+Peak sync jitter 5/9, peak Rx sync delay 206, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4098640188 ticks, disabled
+VIN voltage: min 24.4, current 24.4, max 24.5
+MCU temperature: min 38.8C, current 40.1C, max 40.1C
+Driver 0: pos 0, 396.0 steps/mm, standstill, SG min 4, read errors 0, write errors 0, ifcnt 95, reads 33652, writes 0, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000002 found 1 25 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 1415, send timeouts 0, received 884, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 0, contentions 0, other errors 0
+=== Filament sensors ===
+Interrupt 4 to 9us, poll 8 to 566us
+Driver 0: pos 2503.5, errs: frame 0 parity 0 ovrun 0 pol 0 ovdue 0
+2024-08-21 11:23:13 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:15 Setting PA[0]=0.030000
+PA=22500.000000
+2024-08-21 11:23:15 Forward transformed 0 0 0 to 0.00 0.00 0.00
+2024-08-21 11:23:17 Setting PA[0]=0.040000
+PA=30000.000000
+2024-08-21 11:23:17 Forward transformed 0 0 0 to 0.00 0.00 0.00
+2024-08-21 11:23:18 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:19 Diagnostics for board 5:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 7600, free system stack 108 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,delaying,3.6%,52) HEAT(2,nWait 6,0.2%,124) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,72) CanClock(5,nWait 1,0.0%,60) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.4%,320) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.8%,112), total 100.0%
+Owned mutexes:
+Last reset 00:04:30 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.49ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 30000.000000
+Peak sync jitter 5/9, peak Rx sync delay 207, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4092223898 ticks, disabled
+VIN voltage: min 24.4, current 24.4, max 24.5
+MCU temperature: min 38.8C, current 40.0C, max 40.1C
+Driver 0: pos 0, 396.0 steps/mm, standstill, SG min 4, read errors 0, write errors 0, ifcnt 95, reads 4277, writes 0, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000002 found 1 79 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 207, send timeouts 0, received 121, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 0, contentions 0, other errors 0
+=== Filament sensors ===
+Interrupt 4 to 9us, poll 8 to 566us
+Driver 0: pos 2503.5, errs: frame 0 parity 0 ovrun 0 pol 0 ovdue 0
+2024-08-21 11:23:23 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:27 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:32 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:37 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:42 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:46 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:51 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:23:55 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:00 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:04 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:09 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:14 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:18 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:23 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:28 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:32 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:37 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:41 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:46 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:51 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:24:55 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:00 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:05 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:09 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:14 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:19 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:23 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:28 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:32 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:37 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:42 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:47 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:47 Diagnostics for board 6:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+1 (2024-08-20 10:26:16)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 7696, free system stack 108 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,nWait 6,3.6%,52) HEAT(2,nWait 6,0.2%,128) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,70) CanClock(5,nWait 1,0.0%,58) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.5%,318) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.7%,112), total 100.0%
+Owned mutexes:
+Last reset 00:06:58 ago, cause: software
+Last software reset data not available
+Driver 0: pos 0, 396.0 steps/mm, standstill, SG min 0, read errors 0, write errors 0, ifcnt 38, reads 43025, writes 0, timeouts 0, DMA errors 0, CC errors 0
+Moves scheduled 0, hiccups 0 (0.00ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00
+Peak sync jitter 5/16, peak Rx sync delay 215, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 3980763894 ticks, disabled
+VIN voltage: min 24.4, current 24.4, max 24.4
+MCU temperature: min 35.2C, current 36.7C, max 36.8C
+Last sensors broadcast 0x00000004 found 1 190 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 4479, send timeouts 0, received 2831, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 0, contentions 0, other errors 0
+=== Filament sensors ===
+Interrupt 4 to 9us, poll 8 to 662us
+Driver 0: pos 2160.0, errs: frame 0 parity 0 ovrun 0 pol 0 ovdue 0
+2024-08-21 11:25:51 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:25:56 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:00 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:05 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:07 Board 4 starting firmware update
+2024-08-21 11:26:07 Board 5 starting firmware update
+2024-08-21 11:26:07 Board 6 starting firmware update
+2024-08-21 11:26:07 Forward transformed 0 0 0 to 0.00 0.00 0.00
+2024-08-21 11:26:10 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:15 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:20 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:24 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:29 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:34 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:38 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:43 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:48 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:50 Diagnostics for board 6:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 8528, free system stack 136 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,delaying,3.6%,52) HEAT(2,nWait 6,0.1%,128) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,74) CanClock(5,nWait 1,0.0%,68) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.9%,426) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.4%,112), total 100.0%
+Owned mutexes:
+Last reset 00:00:30 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.00ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 0.000000
+Peak sync jitter 6/9, peak Rx sync delay 202, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4272414049 ticks, disabled
+VIN voltage: min 24.3, current 24.4, max 24.4
+MCU temperature: min 36.4C, current 36.5C, max 36.6C
+Driver 0: pos 0, 80.0 steps/mm, standstill, SG min 0, read errors 0, write errors 1, ifcnt 48, reads 15021, writes 9, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000000 found 0 76 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 262, send timeouts 0, received 278, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 3, contentions 0, other errors 0
+2024-08-21 11:26:53 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:26:57 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:00 Extruder pressure advance: 0.040, 0.030
+2024-08-21 11:27:02 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:06 Diagnostics for board 6:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 8528, free system stack 136 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,delaying,3.6%,52) HEAT(2,nWait 6,0.1%,128) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,72) CanClock(5,nWait 1,0.0%,62) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.9%,422) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.4%,112), total 100.0%
+Owned mutexes:
+Last reset 00:00:45 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.00ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 0.000000
+Peak sync jitter 5/9, peak Rx sync delay 199, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4260936329 ticks, disabled
+VIN voltage: min 24.4, current 24.4, max 24.4
+MCU temperature: min 36.4C, current 36.4C, max 36.6C
+Driver 0: pos 0, 80.0 steps/mm, standstill, SG min 0, read errors 0, write errors 0, ifcnt 48, reads 7651, writes 0, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000000 found 0 129 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 151, send timeouts 0, received 147, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 0, contentions 0, other errors 0
+2024-08-21 11:27:07 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:11 Diagnostics for board 5:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 8528, free system stack 136 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,nWait 6,3.6%,52) HEAT(2,nWait 6,0.1%,128) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,72) CanClock(5,nWait 1,0.0%,60) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.8%,430) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.5%,112), total 100.0%
+Owned mutexes:
+Last reset 00:00:51 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.00ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 0.000000
+Peak sync jitter 5/8, peak Rx sync delay 207, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4256647043 ticks, disabled
+VIN voltage: min 24.3, current 24.4, max 24.4
+MCU temperature: min 39.6C, current 39.6C, max 40.1C
+Driver 0: pos 0, 80.0 steps/mm, standstill, SG min 4, read errors 0, write errors 1, ifcnt 105, reads 25532, writes 9, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000000 found 0 99 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 430, send timeouts 0, received 468, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 3, contentions 0, other errors 0
+2024-08-21 11:27:11 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:15 Extruder pressure advance: 0.040, 0.030
+2024-08-21 11:27:16 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:19 Setting PA[0]=0.030000
+PA=22500.000000
+2024-08-21 11:27:19 Forward transformed 0 0 0 to 0.00 0.00 0.00
+2024-08-21 11:27:21 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:21 Diagnostics for board 5:
+Duet TOOL1LC rev 1.1 or later firmware version 3.6.0-alpha.4+2 (2024-08-21 10:34:27)
+Bootloader ID: SAMC21 bootloader version 2.4 (2021-12-10)
+All averaging filters OK
+Never used RAM 8528, free system stack 136 words
+Tasks: Move(3,nWait 7,0.0%,140) TMC(2,delaying,3.6%,52) HEAT(2,nWait 6,0.1%,128) CanAsync(5,nWait 4,0.0%,54) CanRecv(3,nWait 1,0.0%,72) CanClock(5,nWait 1,0.0%,60) ACCEL(3,nWait 6,0.0%,52) MAIN(1,running,91.8%,430) IDLE(0,ready,0.0%,26) AIN(2,delaying,4.5%,112), total 100.0%
+Owned mutexes:
+Last reset 00:01:01 ago, cause: software
+Last software reset data not available
+Moves scheduled 0, hiccups 0 (0.00/0.00ms), segs 0, step errors 0 (types 0x0), maxLate 0 maxPrep 0, ebfmin 0.00 max 0.00, PA 22500.000000
+Peak sync jitter 5/8, peak Rx sync delay 195, resyncs 0/0, no timer interrupt scheduled, next step interrupt due in 4248876271 ticks, disabled
+VIN voltage: min 24.4, current 24.4, max 24.4
+MCU temperature: min 39.5C, current 39.5C, max 40.1C
+Driver 0: pos 0, 80.0 steps/mm, standstill, SG min 4, read errors 0, write errors 0, ifcnt 105, reads 5180, writes 0, timeouts 0, DMA errors 0, CC errors 0
+Last sensors broadcast 0x00000000 found 0 210 ticks ago, 0 ordering errs, loop time 0
+CAN messages queued 112, send timeouts 0, received 101, lost 0, ignored 0, errs 0, boc 0, free buffers 18, min 18, error reg 0
+dup 0, oos 0/0/0/0, bm 0, wbm 0, rxMotionDelay 0
+Accelerometer: LIS3DH, status: 00
+I2C bus errors 0, naks 0, contentions 0, other errors 0
+2024-08-21 11:27:25 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:30 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:35 {"key":"sbc","flags":"","result":null}
+2024-08-21 11:27:37 Event logging stopped

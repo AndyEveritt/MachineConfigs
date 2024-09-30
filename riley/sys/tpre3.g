@@ -33,6 +33,8 @@ G1 Y{var.tool_y} F{var.pickup_speed}
 ;Close Coupler
 M98 P"/macros/Tool Control/Coupler - Lock"
 
+M98 P"scripts/setLedColor.g" R255 U255 B255
+
 set global.prev_max_speed_x = {move.axes[0].speed}
 set global.prev_max_speed_y = {move.axes[1].speed}
 set global.prev_max_speed_z = {move.axes[2].speed}

@@ -1,0 +1,1 @@
+set global.nozzleDiameters[(exists(param.T) ? param.T : 0)]={param.D}

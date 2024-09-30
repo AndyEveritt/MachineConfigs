@@ -10,3 +10,5 @@
 /firmware/
 *.uf2
 *.bin
+*.zip
+*.csv

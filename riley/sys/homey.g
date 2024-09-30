@@ -16,6 +16,8 @@ G90
 G1 X155 F10000    ; move toolhead to center of bed
 G91
 G1 H1 Y400 F5000 	; move to the front 400mm, stopping at the endstop
+G1 Y-2 F2000
+G1 H1 Y400 F500 	; move to the front 400mm, stopping at the endstop
 G1 Y-16 F5000        ; move back a few mm
 G92 Y{move.axes[1].max}
 G1 H2 Z-3 F1200		; lift bed

@@ -1,3 +1,5 @@
+abort "purge.g not support with this brush"
+
 ;Drop Bed
 G91
 G1 Z3 F1500

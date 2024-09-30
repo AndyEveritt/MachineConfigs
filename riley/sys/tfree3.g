@@ -36,6 +36,8 @@ G53 G1 Y{var.tool_y} F{var.drop_off_speed} ;Usimg machine coordinates
 ;Open Coupler
 M98 P"/macros/Tool Control/Coupler - Unlock"
 
+M98 P"scripts/setLedColor.g" R0 U0 B0
+
 ; Reset acceleration and speed limits
 M203 X{global.prev_max_speed_x} Y{global.prev_max_speed_y} Z{global.prev_max_speed_z}        ; Set maximum speeds (mm/min)
 M201 X{global.prev_max_accel_x} Y{global.prev_max_accel_y} Z{global.prev_max_accel_z}        ; Set accelerations (mm/s^2)

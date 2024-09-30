@@ -27,7 +27,7 @@ M569 P6.0 S0 						; Drive 4 E1
 M569 P5 S1						; Drive 5 Brush
 M569 P4.0 S1 					; Drive 1.2 COUPLER
 
-M584 X3.0 Y2.0 Z0 C4.0 B5			; Axis to driver mapping
+M584 X3.0 Y2.0 Z0 C4.0 B4			; Axis to driver mapping
 M584 E5.0:6.0         				; set extruder drivers
 
 M98 P"resetaxislimit.g"                                 ; Set axis maxima & minima
@@ -50,19 +50,28 @@ M574 Z0 								; No Z endstop
 M574 B2 S3		 						; Set B endstop stall detection
 M574 C1 S3								; Stall detect coupler at low end of its range
 
+; Scanning Z probe
+M558 K1 P11 C"7.i2c.ldc1612" F36000 T36000
+M308 A"SZP coil" S10 Y"thermistor" P"7.temp0" ; thermistor on coil
+G31 K1 Z2 X0.8 Y-14
+M558.2 K1 S15 R136424                           ; set drive current and reading offset
+
 ; Z probe
 M558 K0 P8 A1 C"4.io2.in" H3 F360 T50000 	; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
 G31 K0 P200 X0 Y0 Z0	 					; Set Z probe trigger value, offset and trigger height
 M98 P"resetmeshgrid.g" 			; Define mesh grid
 
 ; Tool probe
-M558 K1 P8 C"!io3.in" H5 F360 T1000
-G31 K1 P200 Z0
+M558 K2 P8 C"!io3.in" H5 F360 T1000
+G31 K2 P200 Z0
 
 ; Accelerometers
 M955 P4.0 I20
 M955 P5.0 I10
 M955 P6.0 I10
+
+; LEDs
+M950 E0 C"led" T0 Q3000000   ; create a RGB Dotstar LED strip
 
 ;Stall Detection
 M915 C S6 F1 H200 R0					; Coupler
@@ -157,8 +166,11 @@ elif {global.lastTool} >= 0
 else
 	G4 S1
 	G28 C 							; home coupler
+	M291 P"Home XYZ?" S3
+	G28 XYZ
 
 ; Declare global variables
+global nozzleDiameters = {0.6, 0.4}
 global prev_max_speed_x = null
 global prev_max_speed_y = null
 global prev_max_speed_z = null
