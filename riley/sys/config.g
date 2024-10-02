@@ -13,6 +13,8 @@ M550 P"Riley"
 ;M667 S1 						; Select CoreXY mode	
 M669 K1
 
+G4 S2							; Wait for CAN boards to startup
+
 M569.1 P2.0 T3 R130.0 I5000.0 D0.06 V300.0 A80000.0
 M569.1 P3.0 T3 R130.0 I5000.0 D0.06 V300.0 A80000.0
 
@@ -36,7 +38,7 @@ M92 X100 Y100 Z1600 C200 B1600 E396:396				            ; Set steps per mm assumi
 M350 E16:16 I1 									        ; Configure microstepping with interpolation
 M350 C16 I1
 M350 X16 Y16 Z16 I1										; Configure microstepping with interpolation
-M566 X700 Y700 Z20 C2 B200 E1000:1000           			; Set maximum instantaneous speed changes (mm/min)
+M566 X3000 Y3000 Z100 C2 B200 E2000:2000           			; Set maximum instantaneous speed changes (mm/min)
 M203 X35000 Y35000 Z2000 C10000 B3500 E5000:5000        ; Set maximum speeds (mm/min)
 M201 X7000 Y7000 Z400 C500 B500 E4000:4000            	; Set accelerations (mm/s^2)
 M906 X2000 Y2000 Z1330 C500 B1000 E1340:1340 I30        ; Set motor currents (mA) and motor idle factor in percent
@@ -49,6 +51,9 @@ M574 Y2 P"4.io0.in" S1 							; Set X / Y endstop stall detection
 M574 Z0 								; No Z endstop
 M574 B2 S3		 						; Set B endstop stall detection
 M574 C1 S3								; Stall detect coupler at low end of its range
+
+; Servos
+M950 S1 C"io5.out" ; brush
 
 ; Scanning Z probe
 M558 K1 P11 C"7.i2c.ldc1612" F36000 T36000
@@ -69,6 +74,10 @@ G31 K2 P200 Z0
 M955 P4.0 I20
 M955 P5.0 I10
 M955 P6.0 I10
+
+; FIlament Sensors
+M591 D0 P3 C"5.io1.in" S1
+M591 D1 P3 C"6.io1.in" S1
 
 ; LEDs
 M950 E0 C"led" T0 Q3000000   ; create a RGB Dotstar LED strip

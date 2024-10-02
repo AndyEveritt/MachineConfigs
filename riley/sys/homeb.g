@@ -26,6 +26,8 @@ G1 H2 B-5 F1000		; back up 5mm
 G92 B55				; set 0 position
 G90 			; back to absolute positioning
 
+M280 P1 S140		; Move wipe arm
+
 M400 			; make sure everything has stopped before we reset the motor currents
 G4 P100			; wait 400ms
 M913 B100 		; motor currents back to 100%
