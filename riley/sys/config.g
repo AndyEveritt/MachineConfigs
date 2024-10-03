@@ -163,6 +163,7 @@ G4 S0.5
 ; Load persistant global variables
 M98 P"scripts/loadPersistentGlobal.g" V"lastTool" X-2
 M98 P"scripts/loadPersistentGlobal.g" V"nozzleDiameters" X{null, null}
+M98 P"scripts/loadPersistentGlobal.g" V"nozzleHF" X{false, false}
 
 ; Set last active tool
 if {global.lastTool} == -2
@@ -179,6 +180,7 @@ else
 	G28 XYZ
 
 ; Declare global variables
+global defaultPA = 0.03
 global prev_max_speed_x = null
 global prev_max_speed_y = null
 global prev_max_speed_z = null
