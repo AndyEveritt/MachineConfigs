@@ -18,5 +18,6 @@ M116 P{var.toolNum}
 G1 E10 F300
 G1 E-100 F1200
 
+M702 P0
 T{var.currentTool} P0
 M568 P{var.toolNum} S{var.currentTemperature}

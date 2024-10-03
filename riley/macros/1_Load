@@ -18,5 +18,6 @@ M116 P{var.toolNum}
 G1 E25 F900
 G1 E60 F300
 
+M701 S"default" P0
 T{var.currentTool} P0
 M568 P{var.toolNum} S{var.currentTemperature}
