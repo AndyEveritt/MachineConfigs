@@ -157,12 +157,12 @@ echo "Z Offsets [T0: ", {tools[0].offsets[2]}, ", T1: ", {tools[1].offsets[2]}, 
 ; Home brush
 G28 B
 
-; Load persistant global variables
-M98 P"globals/lastTool"
 
 G4 S0.5
-if (!exists(global.lastTool))
-	M98 P"persistantglobal.g" V"lastTool" X-2
+
+; Load persistant global variables
+M98 P"scripts/loadPersistentGlobal.g" V"lastTool" X-2
+M98 P"scripts/loadPersistentGlobal.g" V"nozzleDiameters" X{null, null}
 
 ; Set last active tool
 if {global.lastTool} == -2
@@ -179,7 +179,6 @@ else
 	G28 XYZ
 
 ; Declare global variables
-global nozzleDiameters = {0.6, 0.4}
 global prev_max_speed_x = null
 global prev_max_speed_y = null
 global prev_max_speed_z = null
