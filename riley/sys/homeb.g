@@ -14,13 +14,13 @@ var lastHome = move.axes[3].machinePosition
 ;echo "B =", var.lastHome
 
 while true
-    G1 H2 B-5 F1000		; back up 5mm
+    G1 H2 B-3 F1000		; back up
     G1 H4 B65 F3000 	; move to the bottom
     if abs(move.axes[3].machinePosition - var.lastHome) < 0.1
         break
     set var.lastHome = move.axes[3].machinePosition
-    break
     ;echo "["^iterations^"] B =", var.lastHome
+    break
     
 G1 H2 B-5 F1000		; back up 5mm
 G92 B55				; set 0 position

@@ -13,7 +13,7 @@ M550 P"Riley"
 ;M667 S1 						; Select CoreXY mode	
 M669 K1
 
-G4 S2							; Wait for CAN boards to startup
+G4 S3							; Wait for CAN boards to startup
 
 M569.1 P2.0 T3 R130.0 I5000.0 D0.06 V300.0 A80000.0
 M569.1 P3.0 T3 R130.0 I5000.0 D0.06 V300.0 A80000.0
@@ -160,6 +160,16 @@ G28 B
 
 G4 S0.5
 
+; Declare global variables
+global defaultPA = 0.03
+global prev_max_speed_x = null
+global prev_max_speed_y = null
+global prev_max_speed_z = null
+global prev_max_accel_x = null
+global prev_max_accel_y = null
+global prev_max_accel_z = null
+global prev_z_height = null
+
 ; Load persistant global variables
 M98 P"scripts/loadPersistentGlobal.g" V"lastTool" X-2
 M98 P"scripts/loadPersistentGlobal.g" V"nozzleDiameters" X{null, null}
@@ -179,12 +189,3 @@ else
 	M291 P"Home XYZ?" S3
 	G28 XYZ
 
-; Declare global variables
-global defaultPA = 0.03
-global prev_max_speed_x = null
-global prev_max_speed_y = null
-global prev_max_speed_z = null
-global prev_max_accel_x = null
-global prev_max_accel_y = null
-global prev_max_accel_z = null
-global prev_z_height = null
