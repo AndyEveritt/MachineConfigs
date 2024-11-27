@@ -18,8 +18,8 @@ if var.filament != var.loadedFilament
         if (var.loadedFilament != "")
             M702 P{var.runScripts}
         if (!fileexists({"/filaments/"^var.filament^"/config.g"}))
-            echo {"Filament "^var.filament^" does not exist. Using default filament config"}
-            set var.filament = "default"
+            echo {"Filament "^var.filament^" does not exist. Creating..."}
+            M98 P"/macros/Create Filament" F{var.filament}
 
         if (var.runScripts != 0)
             while true

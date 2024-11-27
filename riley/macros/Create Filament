@@ -1,0 +1,57 @@
+var name = ""
+if exists(param.F)
+    set var.name = param.F
+else
+    M291 R"Creating New Filament" P"Enter Filament Name" S7 H50 J1
+    set var.name = input
+
+var temperature = 0
+if exists(param.T)
+    set var.temperature = param.T
+else
+    M291 R"Creating New Filament" P{"Enter load/unload temperature for "^var.name} S5 L0 H350 J1
+    set var.temperature = input
+
+var dir = "/filaments/"^var.name^"/"
+var config = var.dir^"config.g"
+var load = var.dir^"load.g"
+var unload = var.dir^"unload.g"
+
+if (fileexists(var.config))
+    M291 R"Creating New Filament" P{"Filament "^var.name^" already exists, overwrite?"} S3
+
+echo "Creating directory "^var.dir
+M98 P"scripts/createDirectory.g" D{var.dir} ; Wraps M470 P{var.dir} because of a bug that stopped macro execution
+
+
+echo {"Creating filament "^var.name^" (un)loading at "^var.temperature^"C"}
+
+echo >var.load "M98 P""scripts/load.g"" F"""^{var.name}^""" T"^{var.temperature}
+echo >{var.unload} "M98 P""scripts/unload.g"" F"""^{var.name}^""" T"^{var.temperature}
+
+echo >{var.config} "var tool = state.currentTool"
+echo >>{var.config} "var nozzleDiameter = global.nozzleDiameters[var.tool]"
+echo >>{var.config} "var extruderDrive = tools[var.tool].filamentExtruder"
+echo >>{var.config} ""
+echo >>{var.config} "if (global.nozzleHF[var.tool])"
+echo >>{var.config} "    if (var.nozzleDiameter <= 0.25)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    elif (var.nozzleDiameter <= 0.4)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    elif (var.nozzleDiameter <= 0.6)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    elif (var.nozzleDiameter <= 0.8)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    else"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "else"
+echo >>{var.config} "    if (var.nozzleDiameter <= 0.25)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    elif (var.nozzleDiameter <= 0.4)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    elif (var.nozzleDiameter <= 0.6)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    elif (var.nozzleDiameter <= 0.8)"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"
+echo >>{var.config} "    else"
+echo >>{var.config} "        M572 D{var.extruderDrive} S{global.defaultPA}"

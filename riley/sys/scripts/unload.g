@@ -3,6 +3,7 @@ var temperature = param.T
 
 M291 P"Please wait while the nozzle is being heated up" R{"Unloading "^var.filament} T5 ; Display message
 G10 S{var.temperature} ; Heat up the current tool to 100C
+G1 X334 Y100 F30000
 M116 ; Wait for the temperatures to be reached
 ;M98 P"purge.g"
 M291 P"Retracting filament..." R{"Unloading "^var.filament} T5 ; Display another message

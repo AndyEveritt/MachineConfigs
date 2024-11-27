@@ -76,8 +76,8 @@ M955 P5.0 I10
 M955 P6.0 I10
 
 ; FIlament Sensors
-M591 D0 P3 C"5.io1.in" S1
-M591 D1 P3 C"6.io1.in" S1
+M591 D0 P3 C"5.io1.in" S2 A1
+M591 D1 P3 C"6.io1.in" S2 A1
 
 ; LEDs
 M950 E0 C"led" T0 Q3000000   ; create a RGB Dotstar LED strip
@@ -180,9 +180,10 @@ if {global.lastTool} == -2
 	M291 S2 P"Unknown tool loaded" R"Tool Detected"
 	G92 C96
 elif {global.lastTool} >= 0
-	M291 S2 P{"Tool Loaded on Power Off, automatically setting tool to T"^{global.lastTool}} R"Power Resume Tool Auto Set"
-	T{global.lastTool} P0
-	G92 C96
+	M291 S4 P{"Tool Loaded on Power Off, automatically setting tool to T"^{global.lastTool}} R"Power Resume Tool Auto Set" K{"Ok", "Cancel"}
+	if (input == 0)
+		T{global.lastTool} P0
+		G92 C96
 else
 	G4 S1
 	G28 C 							; home coupler
