@@ -1,6 +1,7 @@
 var tool = state.currentTool
 var nozzleDiameter = global.nozzleDiameters[var.tool]
 var extruderDrive = tools[var.tool].filamentExtruder
+set global.defaultFilamentTemperature = 215
 
 if (global.nozzleHF[var.tool])
     if (var.nozzleDiameter <= 0.25)

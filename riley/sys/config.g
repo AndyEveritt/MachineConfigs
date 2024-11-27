@@ -169,6 +169,7 @@ global prev_max_accel_x = null
 global prev_max_accel_y = null
 global prev_max_accel_z = null
 global prev_z_height = null
+global defaultFilamentTemperature = 0
 
 ; Load persistant global variables
 M98 P"scripts/loadPersistentGlobal.g" V"lastTool" X-2

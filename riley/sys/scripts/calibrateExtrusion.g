@@ -36,6 +36,9 @@ if (sensors.filamentMonitors[var.drive].configured.allMoves != true)
 
 
 T{var.tool}
+if (tools[var.tool].active[0] == 0)
+    M568 P{var.tool} S{global.defaultFilamentTemperature}
+M116 P{var.tool}
 M221 D{var.drive} S100
 M592 D{var.drive} A0 B0
 G1 X334 Y100 F30000
