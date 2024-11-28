@@ -8,6 +8,7 @@ if (global.nozzleHF[var.tool])
         M572 D{var.extruderDrive} S{global.defaultPA}
     elif (var.nozzleDiameter <= 0.4)
         M572 D{var.extruderDrive} S0.02
+        M592 D1 A-0.0010370 B0.0003446
     elif (var.nozzleDiameter <= 0.6)
         M572 D{var.extruderDrive} S{global.defaultPA}
     elif (var.nozzleDiameter <= 0.8)

@@ -26,13 +26,12 @@ M98 P"scripts/createDirectory.g" D{var.dir} ; Wraps M470 P{var.dir} because of a
 
 echo {"Creating filament "^var.name^" (un)loading at "^var.temperature^"C"}
 
-echo >var.load "M98 P""scripts/load.g"" F"""^{var.name}^""" T"^{var.temperature}
+echo >{var.load} "M98 P""scripts/load.g"" F"""^{var.name}^""" T"^{var.temperature}
 echo >{var.unload} "M98 P""scripts/unload.g"" F"""^{var.name}^""" T"^{var.temperature}
 
 echo >{var.config} "var tool = state.currentTool"
 echo >>{var.config} "var nozzleDiameter = global.nozzleDiameters[var.tool]"
-echo >>{var.config} "var extruderDrive = tools[var.tool].filamentExtruder
-set global.defaultFilamentTemperature = 200"
+echo >>{var.config} "var extruderDrive = tools[var.tool].filamentExtruder"
 echo >>{var.config} "set global.defaultFilamentTemperature = "^var.temperature
 echo >>{var.config} ""
 echo >>{var.config} "if (global.nozzleHF[var.tool])"

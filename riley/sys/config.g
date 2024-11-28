@@ -121,12 +121,14 @@ M106 P4 S0								; T1 PCF
 ; Tool 0 - Hemera
 M563 P0 S"T0 - Hemera XS" D0 H1 F2 		; Define tool 0
 M572 D0 S0.03
+M309 P0 T10 A100						; Heater feedforward
 G10 P0 X0 Y0 Z0 					    ; Reset tool 0 axis offsets
 G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 
 ; Tool 1 - Hemera
 M563 P1 S"T1 - Hemera XS" D1 H2 F4 		; Define tool 1
 M572 D1 S0.03
+M309 P1 T10 A100						; Heater feedforward
 G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
@@ -162,6 +164,7 @@ G4 S0.5
 
 ; Declare global variables
 global defaultPA = 0.03
+global defaultFilamentTemperature = 0
 global prev_max_speed_x = null
 global prev_max_speed_y = null
 global prev_max_speed_z = null
@@ -169,7 +172,6 @@ global prev_max_accel_x = null
 global prev_max_accel_y = null
 global prev_max_accel_z = null
 global prev_z_height = null
-global defaultFilamentTemperature = 0
 
 ; Load persistant global variables
 M98 P"scripts/loadPersistentGlobal.g" V"lastTool" X-2

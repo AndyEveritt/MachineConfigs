@@ -59,5 +59,7 @@ M564 S1								; apply the normal limits again
 ;fan off
 ;M106 P2 S0
 
+set global.defaultFilamentTemperature = 0
+
 if (state.nextTool == -1)
 	G53 G1 X154 Y200 F{var.movement_speed}
