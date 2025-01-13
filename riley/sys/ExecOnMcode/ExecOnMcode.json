@@ -1,26 +1,18 @@
 [
     {
         "cmd_code": "M1201",
-        "cmd_name": "TAMV",
-        "cmd_command": "cd /home/pi/TAMV && ls && export DISPLAY=0.0 python TAMV.py",
-        "cmd_enabled": true,
+        "cmd_name": "Echo test",
+        "cmd_command": "echo 'If you can see this, it means ExecOnMcode is working !'",
         "cmd_timeout": 30,
-        "cmd_capture_output": false
+        "cmd_capture_output": false,
+        "cmd_enabled": true
     },
     {
         "cmd_code": "M1202",
-        "cmd_name": "Test",
-        "cmd_command": "python /home/pi/test.py",
-        "cmd_enabled": true,
+        "cmd_name": "Python script example - Top",
+        "cmd_command": "python3 /opt/dsf/sd/sys/ExecOnMcode/top-example.py",
         "cmd_timeout": 30,
-        "cmd_capture_output": false
-    },
-    {
-        "cmd_code": "M1203",
-        "cmd_name": "Display",
-        "cmd_command": "echo $DISPLAY",
-        "cmd_enabled": true,
-        "cmd_timeout": 30,
-        "cmd_capture_output": false
+        "cmd_capture_output": false,
+        "cmd_enabled": true
     }
 ]

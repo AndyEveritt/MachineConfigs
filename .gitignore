@@ -154,3 +154,5 @@ Slicer Profiles/SuperSlicer/SuperSlicer.ini
 *.zip
 *.bak
 *.csv
+
+*/backup/*
