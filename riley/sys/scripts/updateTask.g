@@ -15,7 +15,7 @@ while (iterations < #global.tasks)
         continue
     
     if (var.interval != null)
-        echo "Setting task '"^var.taskName^"' interval to "^var.interval^"ms"
+        echo "Setting task '"^var.taskName^"' interval to "^var.interval^"s"
         set global.tasks[iterations][1] = var.interval
 
 

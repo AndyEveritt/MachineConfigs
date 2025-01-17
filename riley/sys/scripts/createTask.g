@@ -7,7 +7,7 @@ if (var.taskName == "")
     M99
 
 var task = {var.taskName, var.interval, var.script, 0}
-echo "Created task '"^var.taskName^"' to run every "^var.interval^"ms (script: '"^var.script^"')"
+echo "Created task '"^var.taskName^"' to run every "^var.interval^"s (script: '"^var.script^"')"
 
 if (global.tasks == null)
     set global.tasks = {var.task,}

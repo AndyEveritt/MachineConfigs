@@ -15,7 +15,7 @@ while (iterations < #global.tasks)
     var timeSinceLastRun = state.upTime - var.lastRunTime
 
     if (var.timeSinceLastRun >= var.interval)
-        echo "Running task '"^var.taskName^"' at "^state.upTime^" (last run: "^var.lastRunTime^")"
+        ; echo "Running task '"^var.taskName^"' at "^state.upTime^" (last run: "^var.lastRunTime^")"
         set global.tasks[iterations][3] = state.upTime
         
         M98 P{var.script}

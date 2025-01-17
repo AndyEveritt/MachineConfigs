@@ -1,7 +1,7 @@
 var tick = 250 ; in ms
 
-M98 P"scripts/createTask.g" V"ledTask" F1 S"scripts/tasks/ledTask.g"
-M98 P"scripts/createTask.g" V"fanTask" F5 S"scripts/tasks/fanTask.g"
+M98 P"scripts/createTask.g" V"ledTask" F2 S"scripts/tasks/ledTask.g"
+M98 P"scripts/createTask.g" V"fanTask" F2 S"scripts/tasks/fanTask.g"
 
 var ms = 0  ; current milliseconds counter
 while true
