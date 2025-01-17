@@ -1,8 +1,11 @@
-var filename = "globals/"^{param.V}
+var id = param.V                    ; name of the global variable
+var value = param.X                 ; value to save
+var filepath = "globals/"^{var.id}  ; internal file path where the global variable is saved
 
-echo > {var.filename} "if exists(global."^{param.V}^")"
-echo >> {var.filename} "    set global."^{param.V}^" = "^{param.X}
-echo >> {var.filename} "else"
-echo >> {var.filename} "    global "^{param.V}^" = "^{param.X}
+; Save the global variable as a file so it is persistent
+echo > {var.filepath} "if exists(global."^{var.id}^")"
+echo >> {var.filepath} "    set global."^{var.id}^" = "^{var.value}
+echo >> {var.filepath} "else"
+echo >> {var.filepath} "    global "^{var.id}^" = "^{var.value}
 
-M98 P{var.filename}
+M98 P{var.filepath} ; load the global variable
