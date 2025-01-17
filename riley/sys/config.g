@@ -170,6 +170,8 @@ global prev_max_accel_x = null
 global prev_max_accel_y = null
 global prev_max_accel_z = null
 global prev_z_height = null
+global ret = null
+global tasks = null
 
 ; Load persistant global variables
 M98 P"scripts/loadPersistentGlobal.g" V"lastTool" X-2

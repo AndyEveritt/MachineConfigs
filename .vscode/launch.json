@@ -28,5 +28,17 @@
             ],
             "console": "integratedTerminal"
         },
+        {
+            "name": "Python: rrgit - diff",
+            "type": "python",
+            "request": "launch",
+            "module": "rrgit",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/riley",
+            "args": [
+                "diff",
+            ],
+            "console": "integratedTerminal"
+        },
     ]
 }
