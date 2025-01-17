@@ -26,8 +26,8 @@ M569 P3.0 S0 D4						; Drive 2 X
 ;M569 P3.0 S0						; Drive 2 X
 M569 P5.0 S0 						; Drive 3 E0
 M569 P6.0 S0 						; Drive 4 E1
-M569 P5 S1						; Drive 5 Brush
-M569 P4.0 S1 					; Drive 1.2 COUPLER
+M569 P5 S1							; Drive 5 Brush
+M569 P4.0 S1 D3 					; Drive 1.2 COUPLER
 
 M584 X3.0 Y2.0 Z0 C4.0 B4			; Axis to driver mapping
 M584 E5.0:6.0         				; set extruder drivers
@@ -76,18 +76,16 @@ M955 P5.0 I10
 M955 P6.0 I10
 
 ; FIlament Sensors
-M591 D0 P3 C"5.io1.in" S2 A1
-M591 D1 P3 C"6.io1.in" S2 A1
+M591 D0 P3 C"5.io1.in" S1 A0
+M591 D1 P3 C"6.io1.in" S1 A0
 
 ; LEDs
 M950 E0 C"led" T0 Q3000000   ; create a RGB Dotstar LED strip
 
 ;Stall Detection
-M915 C S6 F1 H200 R0					; Coupler
-M915 H200 B S3 R0 F0					; Brushes
-
-;Stall Detection
-M915 X Y S1 F0 H280 R0					; X / Y Axes
+M915 C H200 S6 R0 F1					; Coupler
+M915 B H200 S3 R0 F0					; Brushes
+M915 X Y H280 S1 R0 F0					; X / Y Axes
 
 ; Heaters and temperature sensors
 ; Bed heater
