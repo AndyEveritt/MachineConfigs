@@ -3,6 +3,8 @@ G91
 G1 Z3 F1500
 G90 
 
+M83
+
 var prime_heights = {7.5, 7.5}
 var prime_x = 330
 var prime_y = 133

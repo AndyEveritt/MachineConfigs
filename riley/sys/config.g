@@ -20,16 +20,16 @@ M569.1 P3.0 T3 R130.0 I5000.0 D0.06 V300.0 A80000.0
 
 ; Drive direction
 M569 P0 S1 						; Drive 0 Z
-M569 P2.0 S0 D4						; Drive 1 Y
-M569 P3.0 S0 D4						; Drive 2 X
-;M569 P2.0 S0						; Drive 1 Y
-;M569 P3.0 S0						; Drive 2 X
-M569 P5.0 S0 						; Drive 3 E0
-M569 P6.0 S0 						; Drive 4 E1
-M569 P5 S1							; Drive 5 Brush
-M569 P4.0 S1 D3 					; Drive 1.2 COUPLER
+M569 P2.0 S0 D4						; Drive Y
+M569 P3.0 S0 D4						; Drive X
+;M569 P2.0 S0						; Drive Y
+;M569 P3.0 S0						; Drive X
+M569 P5.0 S0 						; Drive E0
+M569 P6.0 S0 						; Drive E1
+M569 P2 S1							; Drive Brush
+M569 P4.0 S1 D3 					; Drive COUPLER
 
-M584 X3.0 Y2.0 Z0 C4.0 B4			; Axis to driver mapping
+M584 X3.0 Y2.0 Z0 C4.0 B2			; Axis to driver mapping
 M584 E5.0:6.0         				; set extruder drivers
 
 M98 P"resetaxislimit.g"                                 ; Set axis maxima & minima
@@ -50,7 +50,7 @@ M574 X1 P"4.io1.in" S1 							; Set X / Y endstop stall detection
 M574 Y2 P"4.io0.in" S1 							; Set X / Y endstop stall detection
 M574 Z0 								; No Z endstop
 M574 B2 S3		 						; Set B endstop stall detection
-M574 C1 S3								; Stall detect coupler at low end of its range
+;M574 C1 S3								; Stall detect coupler at low end of its range
 
 ; Servos
 M950 S1 C"io5.out" ; brush
@@ -62,7 +62,7 @@ G31 K1 Z2 X0.8 Y-14
 M558.2 K1 S15 R136424                           ; set drive current and reading offset
 
 ; Z probe
-M558 K0 P8 A1 C"4.io2.in" H3 F360 T50000 	; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
+M558 K0 P8 A5 C"4.io2.in" H3 F360 T50000 	; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
 G31 K0 P200 X0 Y0 Z0	 					; Set Z probe trigger value, offset and trigger height
 M98 P"resetmeshgrid.g" 			; Define mesh grid
 
@@ -76,8 +76,8 @@ M955 P5.0 I10
 M955 P6.0 I10
 
 ; FIlament Sensors
-M591 D0 P3 C"5.io1.in" S1 A0
-M591 D1 P3 C"6.io1.in" S1 A0
+M591 D0 P3 C"5.io1.in" S0 A0
+M591 D1 P3 C"6.io1.in" S0 A0
 
 ; LEDs
 M950 E0 C"led" T0 Q3000000   ; create a RGB Dotstar LED strip
@@ -119,14 +119,16 @@ M106 P4 S0								; T1 PCF
 ; Tool 0 - Hemera
 M563 P0 S"T0 - Hemera XS" D0 H1 F2 		; Define tool 0
 M572 D0 S0.03
-M309 P0 T10 A100						; Heater feedforward
+M570 H1 T30
+M309 P0 T5 A10							; Heater feedforward (10C per mm/s is measured core filament temperature drop for a Revo)
 G10 P0 X0 Y0 Z0 					    ; Reset tool 0 axis offsets
 G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 
 ; Tool 1 - Hemera
 M563 P1 S"T1 - Hemera XS" D1 H2 F4 		; Define tool 1
 M572 D1 S0.03
-M309 P1 T10 A100						; Heater feedforward
+M570 H2 T30
+M309 P1 T5 A10							; Heater feedforward
 G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 

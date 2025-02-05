@@ -1,4 +1,5 @@
 ; Resume macro file
+M83
 M116 ; wait for temperatures to restore
 if {state.currentTool} != -1
     M98 P"prime.g"

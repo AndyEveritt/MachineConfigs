@@ -11,7 +11,7 @@ M915 H200 B S5 R0 F0 	; set B to sensitivity 15, do nothing when stall, unfilter
 
 G91 			; use relative positioning
 G1 H2 B-1 F3000		; make sure not at bottom of axis, won't move at low current otherwise
-M913 B80; drop motor currents
+M913 B90; drop motor currents
 
 G1 H1 B65 F3000 	; move to the bottom
 var lastHome = move.axes[3].machinePosition
