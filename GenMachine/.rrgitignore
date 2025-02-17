@@ -1,0 +1,16 @@
+/www/
+/gcodes/
+/scans/
+/menu/
+/sys/closed-loop/
+/sys/accelerometer/
+/sys/globals/
+/sys/config.g.bak
+/sys/*.csv
+/firmware/
+*.uf2
+*.bin
+*.zip
+*.csv
+resurrect.g
+eventlog.txt
