@@ -2,7 +2,7 @@
 ; called to home the Z axis
 
 ; Check tool detect switch
-if sensors.gpIn[0] != null && sensors.gpIn[0].value = 1
+if sensors.endstops[1].triggered == true
     M291 S1 T5 P{"Please return tool to dock before homing"} R"Cannot home"
     abort
 
@@ -17,6 +17,8 @@ G90				; back to absolute positioning
 
 G1 X150 Y100 F50000		; Position the endstop above the bed centre
 
+M913 Z100
+
 M558 F1000
 G30
 M558 F300
@@ -27,3 +29,4 @@ G4 P500				; wait 500msec
 G1 Z10 F5000			; Drop the Bed
 G90
 
+M913 Z100

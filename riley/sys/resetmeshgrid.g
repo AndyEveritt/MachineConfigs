@@ -1,1 +1,1 @@
-M557 X10:290 Y20:180 S40 			; Define mesh grid
+M557 X10:290 Y10:180 S10 			; Define mesh grid

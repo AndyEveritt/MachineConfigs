@@ -1,0 +1,4 @@
+if exists(global.nozzleDiameters)
+    set global.nozzleDiameters = {0.6000000,0.4000000}
+else
+    global nozzleDiameters = {0.6000000,0.4000000}
