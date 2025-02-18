@@ -1,0 +1,22 @@
+var callback = param.C
+var delimiter = exists(param.D) ? param.D : 0x0
+var bufferLen = exists(param.L) ? param.L : 255
+
+var buffer = vector(var.bufferLen, 0x0)
+
+var index = 0
+while (true)
+    M261.2 P1 B1 V"byte"
+    if result != 0
+        echo "No more data"
+        break
+    set var.buffer[var.index] = var.byte[0]
+    set var.index = var.index + 1
+    if var.byte[0] == var.delimiter
+        ; echo "End of message"
+        break
+    if var.index >= var.bufferLen
+        echo "Buffer Full"
+        break
+
+M98 P{var.callback} D{take(var.buffer, var.index)}

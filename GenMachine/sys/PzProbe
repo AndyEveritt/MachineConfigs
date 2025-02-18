@@ -1,0 +1,6 @@
+var request = param.V
+
+echo "> PzProbe:", var.request
+M260.2 P1 S{var.request}
+
+M98 P"ReadUART" C"echoData" D{0x03} L255

@@ -1,0 +1,21 @@
+; echo "Data len:", #param.D
+; echo "Data:", param.D
+
+var str = ""
+
+; Convert to Ascii
+while (iterations < #param.D)
+    M98 P"int2ascii" V{param.D[iterations]}
+    set var.str = var.str ^ global.ret
+
+; Display data
+if (find(var.str, "\n") < 0)
+    echo var.str
+
+while true
+    var index = find(var.str, "\n")
+    if (var.index < 0)
+        break
+    
+    echo take(var.str, var.index)
+    set var.str = drop(var.str, var.index + 2)
