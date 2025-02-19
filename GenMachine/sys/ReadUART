@@ -4,6 +4,9 @@ var bufferLen = exists(param.L) ? param.L : 255
 
 var buffer = vector(var.bufferLen, 0x0)
 
+if (exists(sbc))
+    M576 S0
+
 var index = 0
 while (true)
     M261.2 P1 B1 V"byte"
@@ -18,5 +21,8 @@ while (true)
     if var.index >= var.bufferLen
         echo "Buffer Full"
         break
+
+if (exists(sbc))
+    M576 S25
 
 M98 P{var.callback} D{take(var.buffer, var.index)}

@@ -3,6 +3,9 @@
 
 var str = ""
 
+if (exists(sbc))
+    M576 S0
+
 ; Convert to Ascii
 while (iterations < #param.D)
     M98 P"int2ascii" V{param.D[iterations]}
@@ -19,3 +22,6 @@ while true
     
     echo take(var.str, var.index)
     set var.str = drop(var.str, var.index + 2)
+
+if (exists(sbc))
+    M576 S25
