@@ -12,10 +12,12 @@ while (iterations < #global.tasks)
     if (var.script == null || var.script == "")
         continue
     
-    var timeSinceLastRun = state.upTime - var.lastRunTime
+    var currentTime = 1000 * state.upTime + state.msUpTime
+    var timeSinceLastRun = var.currentTime - var.lastRunTime
 
     if (var.timeSinceLastRun >= var.interval)
-        ; echo "Running task '"^var.taskName^"' at "^state.upTime^" (last run: "^var.lastRunTime^")"
-        set global.tasks[iterations][3] = state.upTime
+        if (global.debug)
+            echo "Running task '"^var.taskName^"' at "^var.currentTime^" (last run: "^var.lastRunTime^")", "interval: " ^ {var.timeSinceLastRun}
+        set global.tasks[iterations][3] = var.currentTime
         
         M98 P{var.script}

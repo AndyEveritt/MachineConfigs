@@ -10,6 +10,8 @@ M555 P2 						; Set firmware compatibility to look like Marlin
 M575 P1 B57600 S1
 M550 P"Riley"
 
+M576 S0 						; Set max SPI delay
+
 ;M667 S1 						; Select CoreXY mode	
 M669 K1
 
@@ -120,7 +122,7 @@ M106 P4 S0								; T1 PCF
 M563 P0 S"T0 - Hemera XS" D0 H1 F2 		; Define tool 0
 M572 D0 S0.03
 M570 H1 T30
-M309 P0 T5 A10							; Heater feedforward (10C per mm/s is measured core filament temperature drop for a Revo)
+M309 P0 S0 T0 A10							; Heater feedforward (10C per mm/s is measured core filament temperature drop for a Revo)
 G10 P0 X0 Y0 Z0 					    ; Reset tool 0 axis offsets
 G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 
@@ -128,7 +130,7 @@ G10 P0 R0 S0 							; Reset initial tool 0 active and standby temperatures to 0C
 M563 P1 S"T1 - Hemera XS" D1 H2 F4 		; Define tool 1
 M572 D1 S0.03
 M570 H2 T30
-M309 P1 T5 A10							; Heater feedforward
+M309 P1 S0 T0 A10							; Heater feedforward
 G10 P1 X0 Y0 Z0 					    ; Reset tool 1 axis offsets
 G10 P1 R0 S0 							; Reset initial tool 1 active and standby temperatures to 0C
 
@@ -163,6 +165,8 @@ G28 B
 G4 S0.5
 
 ; Declare global variables
+global debug = false
+global daemonTick = 250
 global defaultPA = 0.03
 global defaultFilamentTemperature = 0
 global prev_max_speed_x = null
